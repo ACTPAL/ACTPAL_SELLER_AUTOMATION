@@ -1,0 +1,566 @@
+<html>
+<head>
+<title>TestNG:  AllTests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>AllTests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>33/6/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Oct 27 12:06:36 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>563 seconds (563858 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.AllProductsTests.testActionSection()'><b>testActionSection</b><br>Test class: tests.AllProductsTests</td>
+<td><div><pre>java.lang.IllegalArgumentException: Invalid row index: 0
+	at Pages.AllProductsPage.clickEditIcon(AllProductsPage.java:295)
+	at tests.AllProductsTests.testActionSection(AllProductsTests.java:297)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1640043321", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1640043321'><pre>java.lang.IllegalArgumentException: Invalid row index: 0
+	at Pages.AllProductsPage.clickEditIcon(AllProductsPage.java:295)
+	at tests.AllProductsTests.testActionSection(AllProductsTests.java:297)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>21</td>
+<td>tests.AllProductsTests@4ef74c30</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.testActionSection()'><b>testActionSection</b><br>Test class: tests.ActiveProductTest</td>
+<td><div><pre>java.lang.IllegalArgumentException: Invalid row index: 0
+	at Pages.AllProductsPage.clickEditIcon(AllProductsPage.java:295)
+	at tests.ActiveProductTest.testActionSection(ActiveProductTest.java:285)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace506027761", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace506027761'><pre>java.lang.IllegalArgumentException: Invalid row index: 0
+	at Pages.AllProductsPage.clickEditIcon(AllProductsPage.java:295)
+	at tests.ActiveProductTest.testActionSection(ActiveProductTest.java:285)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>25</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.AllProductsTests.TestSortByFilter()'><b>TestSortByFilter</b><br>Test class: tests.AllProductsTests</td>
+<td><div><pre>java.lang.AssertionError: Low to High Discount sorting failed expected [true] but found [false]
+	at tests.AllProductsTests.TestSortByFilter(AllProductsTests.java:135)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2117495919", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2117495919'><pre>java.lang.AssertionError: Low to High Discount sorting failed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.AllProductsTests.TestSortByFilter(AllProductsTests.java:135)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>23</td>
+<td>tests.AllProductsTests@4ef74c30</td></tr>
+<tr>
+<td title='tests.Dicountmanagement.OpenDicountmanagemt()'><b>OpenDicountmanagemt</b><br>Test class: tests.Dicountmanagement</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a class=&quot;btn defaultBrownBtn me-2&quot; href=&quot;/Discount/discount_history&quot;&gt;...&lt;/a&gt; is not clickable at point (1463, 120). Other element would receive the click: &lt;div role=&quot;dialog&quot; aria-modal=&quot;true&quot; class=&quot;fade modal modal show&quot; tabindex=&quot;-1&quot; style=&quot;display: block; padding-right: 10px;&quot;&gt;...&lt;/div&gt;
+  (Session info: MicrosoftEdge=141.0.3537.99)
+Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [2730dc6f8156bc7087dc545a6550b4a0, clickElement {id=f.342E2B2303BB6DAAFA7E94AF898D3979.d.B7CCFE13C1FFF546C807DE9BED3207F4.e.377}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.99, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51644}, msedge: {msedgedriverVersion: 140.0.3485.81 (5f3674d4b466..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51644/devtoo..., se:cdpVersion: 141.0.3537.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (2730dc6f8156bc7087dc545a6550b4a0)] -&gt; xpath: //a[@class=&apos;btn defaultBrownBtn me-2&apos;]]
+Session ID: 2730dc6f8156bc7087dc545a6550b4a0
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Pages.Discountmanagement.openDiscountHistoryAndVerify(Discountmanagement.java:278)
+	at tests.Dicountmanagement.OpenDicountmanagemt(Dicountmanagement.java:42)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace454071866", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace454071866'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a class=&quot;btn defaultBrownBtn me-2&quot; href=&quot;/Discount/discount_history&quot;&gt;...&lt;/a&gt; is not clickable at point (1463, 120). Other element would receive the click: &lt;div role=&quot;dialog&quot; aria-modal=&quot;true&quot; class=&quot;fade modal modal show&quot; tabindex=&quot;-1&quot; style=&quot;display: block; padding-right: 10px;&quot;&gt;...&lt;/div&gt;
+  (Session info: MicrosoftEdge=141.0.3537.99)
+Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [2730dc6f8156bc7087dc545a6550b4a0, clickElement {id=f.342E2B2303BB6DAAFA7E94AF898D3979.d.B7CCFE13C1FFF546C807DE9BED3207F4.e.377}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.99, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51644}, msedge: {msedgedriverVersion: 140.0.3485.81 (5f3674d4b466..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51644/devtoo..., se:cdpVersion: 141.0.3537.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (2730dc6f8156bc7087dc545a6550b4a0)] -&gt; xpath: //a[@class=&apos;btn defaultBrownBtn me-2&apos;]]
+Session ID: 2730dc6f8156bc7087dc545a6550b4a0
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Pages.Discountmanagement.openDiscountHistoryAndVerify(Discountmanagement.java:278)
+	at tests.Dicountmanagement.OpenDicountmanagemt(Dicountmanagement.java:42)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>31</td>
+<td>tests.Dicountmanagement@638ef7ed</td></tr>
+<tr>
+<td title='tests.AllProductsTests.TestStatusFilter()'><b>TestStatusFilter</b><br>Test class: tests.AllProductsTests</td>
+<td><div><pre>java.lang.AssertionError: ❌ Some products are NOT Active after applying &apos;Active&apos; filter! expected [true] but found [false]
+	at tests.AllProductsTests.TestStatusFilter(AllProductsTests.java:174)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2131280707", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2131280707'><pre>java.lang.AssertionError: ❌ Some products are NOT Active after applying &apos;Active&apos; filter! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.AllProductsTests.TestStatusFilter(AllProductsTests.java:174)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>11</td>
+<td>tests.AllProductsTests@4ef74c30</td></tr>
+<tr>
+<td title='tests.AddProductTest.TestAddNewProductFullFlow()'><b>TestAddNewProductFullFlow</b><br>Test class: tests.AddProductTest</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: MicrosoftEdge=141.0.3537.99)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [5376615b2f193e8eba730185d86fb9bb, clickElement {id=f.C66D3813C8C5DE40054DAC9C83FE9BB5.d.1F7DFBC2A8BA7663956395B06BF839ED.e.367}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.99, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:59648}, msedge: {msedgedriverVersion: 140.0.3485.81 (5f3674d4b466..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59648/devtoo..., se:cdpVersion: 141.0.3537.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (5376615b2f193e8eba730185d86fb9bb)] -&gt; xpath: //input[@id=&apos;flexRadioDefault1&apos;]]
+Session ID: 5376615b2f193e8eba730185d86fb9bb
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Pages.AddProductPage.selectDiscountOption(AddProductPage.java:188)
+	at tests.AddProductTest.TestAddNewProductFullFlow(AddProductTest.java:78)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1962049725", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1962049725'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: MicrosoftEdge=141.0.3537.99)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [5376615b2f193e8eba730185d86fb9bb, clickElement {id=f.C66D3813C8C5DE40054DAC9C83FE9BB5.d.1F7DFBC2A8BA7663956395B06BF839ED.e.367}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.99, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:59648}, msedge: {msedgedriverVersion: 140.0.3485.81 (5f3674d4b466..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59648/devtoo..., se:cdpVersion: 141.0.3537.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (5376615b2f193e8eba730185d86fb9bb)] -&gt; xpath: //input[@id=&apos;flexRadioDefault1&apos;]]
+Session ID: 5376615b2f193e8eba730185d86fb9bb
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Pages.AddProductPage.selectDiscountOption(AddProductPage.java:188)
+	at tests.AddProductTest.TestAddNewProductFullFlow(AddProductTest.java:78)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>10</td>
+<td>tests.AddProductTest@3e62d773</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.RegisterTests.TestUserRegistration()'><b>TestUserRegistration</b><br>Test class: tests.RegisterTests</td>
+<td></td>
+<td>7</td>
+<td>tests.RegisterTests@3b6d844d</td></tr>
+<tr>
+<td title='tests.LoginTests.Createaccount()'><b>Createaccount</b><br>Test class: tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>tests.LoginTests@6c7a164b</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.TestResetButton()'><b>TestResetButton</b><br>Test class: tests.ActiveProductTest</td>
+<td></td>
+<td>14</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.LoginTests.TestValxpathLogin()'><b>TestValxpathLogin</b><br>Test class: tests.LoginTests</td>
+<td></td>
+<td>1</td>
+<td>tests.LoginTests@6c7a164b</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.TestStatusFilter()'><b>TestStatusFilter</b><br>Test class: tests.ActiveProductTest</td>
+<td></td>
+<td>23</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.AllProductsTests.TestResetButton()'><b>TestResetButton</b><br>Test class: tests.AllProductsTests</td>
+<td></td>
+<td>6</td>
+<td>tests.AllProductsTests@4ef74c30</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.TestSortByFilter()'><b>TestSortByFilter</b><br>Test class: tests.ActiveProductTest</td>
+<td></td>
+<td>32</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.AddProductTest.VerifyCategorySubcategoryDependency()'><b>VerifyCategorySubcategoryDependency</b><br>Test class: tests.AddProductTest</td>
+<td></td>
+<td>5</td>
+<td>tests.AddProductTest@3e62d773</td></tr>
+<tr>
+<td title='tests.LoginTests.TestInvalxpathPassword()'><b>TestInvalxpathPassword</b><br>Test class: tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>tests.LoginTests@6c7a164b</td></tr>
+<tr>
+<td title='tests.LoginTests.Checkforgotpassbtn()'><b>Checkforgotpassbtn</b><br>Test class: tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>tests.LoginTests@6c7a164b</td></tr>
+<tr>
+<td title='tests.AllProductsTests.AddnewProductBTN()'><b>AddnewProductBTN</b><br>Test class: tests.AllProductsTests</td>
+<td></td>
+<td>4</td>
+<td>tests.AllProductsTests@4ef74c30</td></tr>
+<tr>
+<td title='tests.ForgotPasswordTests.TestResetPasswordWithValidemail()'><b>TestResetPasswordWithValidemail</b><br>Test class: tests.ForgotPasswordTests</td>
+<td></td>
+<td>2</td>
+<td>tests.ForgotPasswordTests@4c2bb6e0</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.TestToggleByIndex()'><b>TestToggleByIndex</b><br>Test class: tests.ActiveProductTest</td>
+<td></td>
+<td>15</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.ForgotPasswordTests.TestResetPasswordWithinvlaidemail()'><b>TestResetPasswordWithinvlaidemail</b><br>Test class: tests.ForgotPasswordTests</td>
+<td></td>
+<td>3</td>
+<td>tests.ForgotPasswordTests@4c2bb6e0</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.TestExportCSVFunctionality()'><b>TestExportCSVFunctionality</b><br>Test class: tests.ActiveProductTest</td>
+<td></td>
+<td>13</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.TestFilterProductsByCategory()'><b>TestFilterProductsByCategory</b><br>Test class: tests.ActiveProductTest</td>
+<td></td>
+<td>16</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.AddProductTest.TestMandatoryBasicDetailsValidationSeparate()'><b>TestMandatoryBasicDetailsValidationSeparate</b><br>Test class: tests.AddProductTest</td>
+<td></td>
+<td>17</td>
+<td>tests.AddProductTest@3e62d773</td></tr>
+<tr>
+<td title='tests.RegisterTests.UserRegistrationDuplicateuserName()'><b>UserRegistrationDuplicateuserName</b><br>Test class: tests.RegisterTests</td>
+<td></td>
+<td>3</td>
+<td>tests.RegisterTests@3b6d844d</td></tr>
+<tr>
+<td title='tests.AddProductTest.CheckDupicatproduct()'><b>CheckDupicatproduct</b><br>Test class: tests.AddProductTest</td>
+<td></td>
+<td>8</td>
+<td>tests.AddProductTest@3e62d773</td></tr>
+<tr>
+<td title='tests.LoginTests.TestInvalxpathEmail()'><b>TestInvalxpathEmail</b><br>Test class: tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>tests.LoginTests@6c7a164b</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.TestAdvancedFilter()'><b>TestAdvancedFilter</b><br>Test class: tests.ActiveProductTest</td>
+<td></td>
+<td>18</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.TestActiveProductPageLoads()'><b>TestActiveProductPageLoads</b><br>Test class: tests.ActiveProductTest</td>
+<td></td>
+<td>13</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.AddnewProductBTN()'><b>AddnewProductBTN</b><br>Test class: tests.ActiveProductTest</td>
+<td></td>
+<td>14</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.RegisterTests.UserRegistrationDuplicateEmail()'><b>UserRegistrationDuplicateEmail</b><br>Test class: tests.RegisterTests</td>
+<td></td>
+<td>3</td>
+<td>tests.RegisterTests@3b6d844d</td></tr>
+<tr>
+<td title='tests.AllProductsTests.TestAllProductPageLoads()'><b>TestAllProductPageLoads</b><br>Test class: tests.AllProductsTests</td>
+<td></td>
+<td>5</td>
+<td>tests.AllProductsTests@4ef74c30</td></tr>
+<tr>
+<td title='tests.AllProductsTests.TestExportCSVFunctionality()'><b>TestExportCSVFunctionality</b><br>Test class: tests.AllProductsTests</td>
+<td></td>
+<td>3</td>
+<td>tests.AllProductsTests@4ef74c30</td></tr>
+<tr>
+<td title='tests.AllProductsTests.TestFilterProductsByCategory()'><b>TestFilterProductsByCategory</b><br>Test class: tests.AllProductsTests</td>
+<td></td>
+<td>8</td>
+<td>tests.AllProductsTests@4ef74c30</td></tr>
+<tr>
+<td title='tests.Dicountmanagement.OpenDicountmanagemntpage()'><b>OpenDicountmanagemntpage</b><br>Test class: tests.Dicountmanagement</td>
+<td></td>
+<td>37</td>
+<td>tests.Dicountmanagement@638ef7ed</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.TestSearchKeywordFilter()'><b>TestSearchKeywordFilter</b><br>Test class: tests.ActiveProductTest</td>
+<td></td>
+<td>14</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.AllProductsTests.TestAdvancedFilter()'><b>TestAdvancedFilter</b><br>Test class: tests.AllProductsTests</td>
+<td></td>
+<td>13</td>
+<td>tests.AllProductsTests@4ef74c30</td></tr>
+<tr>
+<td title='tests.AllProductsTests.TestSearchKeywordFilter()'><b>TestSearchKeywordFilter</b><br>Test class: tests.AllProductsTests</td>
+<td></td>
+<td>5</td>
+<td>tests.AllProductsTests@4ef74c30</td></tr>
+<tr>
+<td title='tests.ActiveProductTest.TestActiveProductView()'><b>TestActiveProductView</b><br>Test class: tests.ActiveProductTest</td>
+<td></td>
+<td>16</td>
+<td>tests.ActiveProductTest@7283d3eb</td></tr>
+<tr>
+<td title='tests.AllProductsTests.TestToggleByIndex()'><b>TestToggleByIndex</b><br>Test class: tests.AllProductsTests</td>
+<td></td>
+<td>10</td>
+<td>tests.AllProductsTests@4ef74c30</td></tr>
+</table><p>
+</body>
+</html>

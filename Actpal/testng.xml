@@ -1,0 +1,39 @@
+<suite name="Actpal Suite" verbose="1">
+    <listeners>
+        <listener class-name="base.ExtentListener"/>
+    </listeners>
+
+    <!-- 🧩 Group 1 -->
+    <test name="User Authentication Tests">
+        <classes>
+            <class name="tests.RegisterTests"/>
+            <class name="tests.LoginTests"/>
+        </classes>
+    </test>
+
+    <!-- 🧩 Group 2 -->
+    <test name="Password Recovery Tests">
+        <classes>
+            <class name="tests.ForgotPasswordTests"/>
+           
+        </classes>
+    </test>
+
+    <!-- 🧩 Group 3 -->
+    <test name="Product Management Tests">
+        <classes>
+            <class name="tests.AllProductsTests"/>
+            <class name="tests.ActiveProductTest"/>
+             <class name="tests.AddProductTest"/>
+        </classes>
+    </test>
+
+    <!-- 🧩 Group 4 -->
+    <test name="Discount Management Tests">
+        <classes>
+            <class name="tests.Dicountmanagement"/>
+            <class name="tests.BrandsManagementTest"/>
+        </classes>
+    </test>
+
+</suite>
