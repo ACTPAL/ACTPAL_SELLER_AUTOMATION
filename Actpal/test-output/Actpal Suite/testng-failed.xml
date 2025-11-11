@@ -6,25 +6,23 @@
   </listeners>
   <test thread-count="5" name="Product Management Tests(failed)">
     <classes>
-      <class name="tests.AllProductsTests">
-        <methods>
-          <include name="setUp"/>
-          <include name="TestStatusFilter"/>
-          <include name="tearDown"/>
-          <include name="testActionSection"/>
-          <include name="TestSortByFilter"/>
-          <include name="TestAdvancedFilter"/>
-          <include name="TestToggleByIndex"/>
-        </methods>
-      </class> <!-- tests.AllProductsTests -->
       <class name="tests.ActiveProductTest">
         <methods>
-          <include name="TestSearchKeywordFilter"/>
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="testActionSection"/>
         </methods>
       </class> <!-- tests.ActiveProductTest -->
+      <class name="tests.AllProductsTests">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="TestStatusFilter"/>
+          <include name="TestSortByFilter"/>
+          <include name="TestFilterProductsByCategory"/>
+          <include name="TestToggleByIndex"/>
+        </methods>
+      </class> <!-- tests.AllProductsTests -->
     </classes>
   </test> <!-- Product Management Tests(failed) -->
 </suite> <!-- Failed suite [Actpal Suite] -->

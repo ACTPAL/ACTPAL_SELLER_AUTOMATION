@@ -1,32 +1,499 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="51" passed="46" failed="5" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-08T19:18:50 IST" name="Default suite" finished-at="2025-11-08T19:19:08 IST" duration-ms="18252">
+  <suite started-at="2025-11-10T18:52:57 IST" name="Actpal Suite" finished-at="2025-11-10T19:05:03 IST" duration-ms="726505">
     <groups>
     </groups>
-    <test started-at="2025-11-08T19:18:50 IST" name="Default test" finished-at="2025-11-08T19:19:08 IST" duration-ms="18252">
-      <class name="tests.OrderManagementTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.OrderManagementTest@54d9d12d]" started-at="2025-11-08T19:18:50 IST" name="setUp" finished-at="2025-11-08T19:18:52 IST" duration-ms="2057" status="PASS">
+    <test started-at="2025-11-10T18:52:57 IST" name="User Authentication Tests" finished-at="2025-11-10T18:53:23 IST" duration-ms="25951">
+      <class name="tests.LoginTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:14 IST" name="setUp" finished-at="2025-11-10T18:53:15 IST" duration-ms="858" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="OpenOrderManagmentpage()[pri:1, instance:tests.OrderManagementTest@54d9d12d]" started-at="2025-11-08T19:18:52 IST" name="OpenOrderManagmentpage" finished-at="2025-11-08T19:19:08 IST" duration-ms="15634" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="TestValxpathLogin()[pri:1, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:15 IST" name="TestValxpathLogin" finished-at="2025-11-10T18:53:17 IST" duration-ms="1762" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestValxpathLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:17 IST" name="tearDown" finished-at="2025-11-10T18:53:17 IST" duration-ms="184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:17 IST" name="setUp" finished-at="2025-11-10T18:53:18 IST" duration-ms="815" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestInvalxpathEmail()[pri:2, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:18 IST" name="TestInvalxpathEmail" finished-at="2025-11-10T18:53:18 IST" duration-ms="488" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestInvalxpathEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:18 IST" name="tearDown" finished-at="2025-11-10T18:53:18 IST" duration-ms="199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:18 IST" name="setUp" finished-at="2025-11-10T18:53:19 IST" duration-ms="879" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestInvalxpathPassword()[pri:3, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:19 IST" name="TestInvalxpathPassword" finished-at="2025-11-10T18:53:20 IST" duration-ms="451" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestInvalxpathPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:20 IST" name="tearDown" finished-at="2025-11-10T18:53:20 IST" duration-ms="185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:20 IST" name="setUp" finished-at="2025-11-10T18:53:21 IST" duration-ms="805" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="Checkforgotpassbtn()[pri:4, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:21 IST" name="Checkforgotpassbtn" finished-at="2025-11-10T18:53:21 IST" duration-ms="396" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Checkforgotpassbtn -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:21 IST" name="tearDown" finished-at="2025-11-10T18:53:21 IST" duration-ms="187" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:21 IST" name="setUp" finished-at="2025-11-10T18:53:22 IST" duration-ms="836" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="Createaccount()[pri:5, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:22 IST" name="Createaccount" finished-at="2025-11-10T18:53:22 IST" duration-ms="400" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Createaccount -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTests@7fd7a283]" started-at="2025-11-10T18:53:22 IST" name="tearDown" finished-at="2025-11-10T18:53:23 IST" duration-ms="188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LoginTests -->
+      <class name="tests.RegisterTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.RegisterTests@2f67a4d3]" started-at="2025-11-10T18:52:57 IST" name="setUp" finished-at="2025-11-10T18:52:58 IST" duration-ms="1556" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestUserRegistration()[pri:1, instance:tests.RegisterTests@2f67a4d3]" started-at="2025-11-10T18:52:58 IST" name="TestUserRegistration" finished-at="2025-11-10T18:53:06 IST" duration-ms="7656" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestUserRegistration -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.RegisterTests@2f67a4d3]" started-at="2025-11-10T18:53:06 IST" name="tearDown" finished-at="2025-11-10T18:53:06 IST" duration-ms="277" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.RegisterTests@2f67a4d3]" started-at="2025-11-10T18:53:06 IST" name="setUp" finished-at="2025-11-10T18:53:07 IST" duration-ms="889" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="UserRegistrationDuplicateEmail()[pri:2, instance:tests.RegisterTests@2f67a4d3]" started-at="2025-11-10T18:53:07 IST" name="UserRegistrationDuplicateEmail" finished-at="2025-11-10T18:53:10 IST" duration-ms="2926" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserRegistrationDuplicateEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.RegisterTests@2f67a4d3]" started-at="2025-11-10T18:53:10 IST" name="tearDown" finished-at="2025-11-10T18:53:10 IST" duration-ms="222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.RegisterTests@2f67a4d3]" started-at="2025-11-10T18:53:10 IST" name="setUp" finished-at="2025-11-10T18:53:11 IST" duration-ms="879" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="UserRegistrationDuplicateuserName()[pri:3, instance:tests.RegisterTests@2f67a4d3]" started-at="2025-11-10T18:53:11 IST" name="UserRegistrationDuplicateuserName" finished-at="2025-11-10T18:53:14 IST" duration-ms="2652" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserRegistrationDuplicateuserName -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.RegisterTests@2f67a4d3]" started-at="2025-11-10T18:53:14 IST" name="tearDown" finished-at="2025-11-10T18:53:14 IST" duration-ms="196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.RegisterTests -->
+    </test> <!-- User Authentication Tests -->
+    <test started-at="2025-11-10T18:53:23 IST" name="Password Recovery Tests" finished-at="2025-11-10T18:53:31 IST" duration-ms="7821">
+      <class name="tests.ForgotPasswordTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ForgotPasswordTests@19976a65]" started-at="2025-11-10T18:53:23 IST" name="setUp" finished-at="2025-11-10T18:53:24 IST" duration-ms="881" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestResetPasswordWithValidemail()[pri:1, instance:tests.ForgotPasswordTests@19976a65]" started-at="2025-11-10T18:53:24 IST" name="TestResetPasswordWithValidemail" finished-at="2025-11-10T18:53:26 IST" duration-ms="2288" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestResetPasswordWithValidemail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ForgotPasswordTests@19976a65]" started-at="2025-11-10T18:53:26 IST" name="tearDown" finished-at="2025-11-10T18:53:26 IST" duration-ms="190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ForgotPasswordTests@19976a65]" started-at="2025-11-10T18:53:26 IST" name="setUp" finished-at="2025-11-10T18:53:27 IST" duration-ms="842" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestResetPasswordWithinvlaidemail()[pri:2, instance:tests.ForgotPasswordTests@19976a65]" started-at="2025-11-10T18:53:27 IST" name="TestResetPasswordWithinvlaidemail" finished-at="2025-11-10T18:53:30 IST" duration-ms="3365" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestResetPasswordWithinvlaidemail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ForgotPasswordTests@19976a65]" started-at="2025-11-10T18:53:30 IST" name="tearDown" finished-at="2025-11-10T18:53:31 IST" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.ForgotPasswordTests -->
+    </test> <!-- Password Recovery Tests -->
+    <test started-at="2025-11-10T18:53:31 IST" name="Product Management Tests" finished-at="2025-11-10T19:00:37 IST" duration-ms="426071">
+      <class name="tests.AddProductTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T18:59:36 IST" name="setUp" finished-at="2025-11-10T18:59:37 IST" duration-ms="835" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestAddNewProductFullFlow()[pri:1, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T18:59:37 IST" name="TestAddNewProductFullFlow" finished-at="2025-11-10T19:00:00 IST" duration-ms="22831" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestAddNewProductFullFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T19:00:00 IST" name="tearDown" finished-at="2025-11-10T19:00:00 IST" duration-ms="246" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T19:00:00 IST" name="setUp" finished-at="2025-11-10T19:00:01 IST" duration-ms="903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="CheckDupicatproduct()[pri:2, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T19:00:01 IST" name="CheckDupicatproduct" finished-at="2025-11-10T19:00:09 IST" duration-ms="7821" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckDupicatproduct -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T19:00:09 IST" name="tearDown" finished-at="2025-11-10T19:00:09 IST" duration-ms="250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T19:00:09 IST" name="setUp" finished-at="2025-11-10T19:00:10 IST" duration-ms="860" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestMandatoryBasicDetailsValidationSeparate()[pri:3, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T19:00:10 IST" name="TestMandatoryBasicDetailsValidationSeparate" finished-at="2025-11-10T19:00:29 IST" duration-ms="19348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestMandatoryBasicDetailsValidationSeparate -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T19:00:29 IST" name="tearDown" finished-at="2025-11-10T19:00:30 IST" duration-ms="189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T19:00:30 IST" name="setUp" finished-at="2025-11-10T19:00:30 IST" duration-ms="802" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="VerifyCategorySubcategoryDependency()[pri:4, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T19:00:30 IST" name="VerifyCategorySubcategoryDependency" finished-at="2025-11-10T19:00:36 IST" duration-ms="6090" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyCategorySubcategoryDependency -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AddProductTest@93081b6]" started-at="2025-11-10T19:00:36 IST" name="tearDown" finished-at="2025-11-10T19:00:37 IST" duration-ms="246" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.AddProductTest -->
+      <class name="tests.ActiveProductTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:55:54 IST" name="setUp" finished-at="2025-11-10T18:55:55 IST" duration-ms="1092" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestActiveProductPageLoads()[pri:1, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:55:55 IST" name="TestActiveProductPageLoads" finished-at="2025-11-10T18:56:08 IST" duration-ms="13303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestActiveProductPageLoads -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:08 IST" name="tearDown" finished-at="2025-11-10T18:56:09 IST" duration-ms="229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:09 IST" name="setUp" finished-at="2025-11-10T18:56:09 IST" duration-ms="867" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestSearchKeywordFilter()[pri:2, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:09 IST" name="TestSearchKeywordFilter" finished-at="2025-11-10T18:56:23 IST" duration-ms="13953" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestSearchKeywordFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:23 IST" name="tearDown" finished-at="2025-11-10T18:56:24 IST" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:24 IST" name="setUp" finished-at="2025-11-10T18:56:24 IST" duration-ms="806" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestResetButton()[pri:3, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:24 IST" name="TestResetButton" finished-at="2025-11-10T18:56:39 IST" duration-ms="14317" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestResetButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:39 IST" name="tearDown" finished-at="2025-11-10T18:56:39 IST" duration-ms="374" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:39 IST" name="setUp" finished-at="2025-11-10T18:56:40 IST" duration-ms="1117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestExportCSVFunctionality()[pri:4, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:40 IST" name="TestExportCSVFunctionality" finished-at="2025-11-10T18:56:54 IST" duration-ms="13511" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestExportCSVFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:54 IST" name="tearDown" finished-at="2025-11-10T18:56:54 IST" duration-ms="240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:54 IST" name="setUp" finished-at="2025-11-10T18:56:55 IST" duration-ms="1047" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestSortByFilter()[pri:5, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:56:55 IST" name="TestSortByFilter" finished-at="2025-11-10T18:57:27 IST" duration-ms="32035" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestSortByFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:57:27 IST" name="tearDown" finished-at="2025-11-10T18:57:27 IST" duration-ms="234" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:57:27 IST" name="setUp" finished-at="2025-11-10T18:57:29 IST" duration-ms="1230" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestStatusFilter()[pri:6, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:57:29 IST" name="TestStatusFilter" finished-at="2025-11-10T18:57:53 IST" duration-ms="24039" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestStatusFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:57:53 IST" name="tearDown" finished-at="2025-11-10T18:57:53 IST" duration-ms="231" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:57:53 IST" name="setUp" finished-at="2025-11-10T18:57:54 IST" duration-ms="906" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestAdvancedFilter()[pri:7, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:57:54 IST" name="TestAdvancedFilter" finished-at="2025-11-10T18:58:12 IST" duration-ms="18651" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestAdvancedFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:58:12 IST" name="tearDown" finished-at="2025-11-10T18:58:13 IST" duration-ms="245" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:58:13 IST" name="setUp" finished-at="2025-11-10T18:58:13 IST" duration-ms="780" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testActionSection()[pri:9, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:58:13 IST" name="testActionSection" finished-at="2025-11-10T18:58:31 IST" duration-ms="18028" status="FAIL">
+          <exception class="java.lang.IllegalArgumentException">
             <message>
-              <![CDATA[❌ Wrong status shown!
-Expected: Payment Failed
-Found Class: activeBtn Delivered expected [true] but found [false]]]>
+              <![CDATA[❌ Invalid index: 0. Must be between 1 and 11]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: ❌ Wrong status shown!
-Expected: Payment Failed
-Found Class: activeBtn Delivered expected [true] but found [false]
+              <![CDATA[java.lang.IllegalArgumentException: ❌ Invalid index: 0. Must be between 1 and 11
+at Pages.AllProductsPage.clickEditIcon(AllProductsPage.java:337)
+at tests.ActiveProductTest.testActionSection(ActiveProductTest.java:285)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testActionSection -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:58:31 IST" name="tearDown" finished-at="2025-11-10T18:58:32 IST" duration-ms="251" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:58:32 IST" name="setUp" finished-at="2025-11-10T18:58:33 IST" duration-ms="885" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="AddnewProductBTN()[pri:10, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:58:33 IST" name="AddnewProductBTN" finished-at="2025-11-10T18:58:47 IST" duration-ms="14206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddnewProductBTN -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:58:47 IST" name="tearDown" finished-at="2025-11-10T18:58:47 IST" duration-ms="289" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:58:47 IST" name="setUp" finished-at="2025-11-10T18:58:48 IST" duration-ms="883" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestToggleByIndex()[pri:11, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:58:48 IST" name="TestToggleByIndex" finished-at="2025-11-10T18:59:03 IST" duration-ms="15008" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestToggleByIndex -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:59:03 IST" name="tearDown" finished-at="2025-11-10T18:59:03 IST" duration-ms="222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:59:03 IST" name="setUp" finished-at="2025-11-10T18:59:04 IST" duration-ms="747" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestFilterProductsByCategory()[pri:12, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:59:04 IST" name="TestFilterProductsByCategory" finished-at="2025-11-10T18:59:19 IST" duration-ms="15421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestFilterProductsByCategory -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:59:19 IST" name="tearDown" finished-at="2025-11-10T18:59:20 IST" duration-ms="244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:59:20 IST" name="setUp" finished-at="2025-11-10T18:59:21 IST" duration-ms="1120" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestActiveProductView()[pri:13, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:59:21 IST" name="TestActiveProductView" finished-at="2025-11-10T18:59:36 IST" duration-ms="15335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestActiveProductView -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ActiveProductTest@24c22fe]" started-at="2025-11-10T18:59:36 IST" name="tearDown" finished-at="2025-11-10T18:59:36 IST" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.ActiveProductTest -->
+      <class name="tests.AllProductsTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:31 IST" name="setUp" finished-at="2025-11-10T18:53:31 IST" duration-ms="845" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestAllProductPageLoads()[pri:1, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:31 IST" name="TestAllProductPageLoads" finished-at="2025-11-10T18:53:36 IST" duration-ms="4861" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestAllProductPageLoads -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:36 IST" name="tearDown" finished-at="2025-11-10T18:53:37 IST" duration-ms="213" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:37 IST" name="setUp" finished-at="2025-11-10T18:53:37 IST" duration-ms="862" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestSearchKeywordFilter()[pri:2, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:37 IST" name="TestSearchKeywordFilter" finished-at="2025-11-10T18:53:43 IST" duration-ms="5887" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestSearchKeywordFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:43 IST" name="tearDown" finished-at="2025-11-10T18:53:44 IST" duration-ms="240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:44 IST" name="setUp" finished-at="2025-11-10T18:53:45 IST" duration-ms="1329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestResetButton()[pri:3, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:45 IST" name="TestResetButton" finished-at="2025-11-10T18:53:51 IST" duration-ms="6420" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestResetButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:51 IST" name="tearDown" finished-at="2025-11-10T18:53:52 IST" duration-ms="244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:52 IST" name="setUp" finished-at="2025-11-10T18:53:53 IST" duration-ms="1154" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestExportCSVFunctionality()[pri:4, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:53 IST" name="TestExportCSVFunctionality" finished-at="2025-11-10T18:53:58 IST" duration-ms="4896" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestExportCSVFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:58 IST" name="tearDown" finished-at="2025-11-10T18:53:58 IST" duration-ms="183" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:58 IST" name="setUp" finished-at="2025-11-10T18:53:59 IST" duration-ms="888" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestSortByFilter()[pri:5, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:53:59 IST" name="TestSortByFilter" finished-at="2025-11-10T18:54:16 IST" duration-ms="17240" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of all elements located by By.cssSelector: td.w-12 (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.69, fedcm:accounts: true, goog:processID: 11816, ms:edgeOptions: {debuggerAddress: localhost:54324}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54324/devtoo..., se:cdpVersion: 142.0.3595.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: db640c1a7e985db5212c56cc984f4bd6]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all elements located by By.cssSelector: td.w-12 (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.69, fedcm:accounts: true, goog:processID: 11816, ms:edgeOptions: {debuggerAddress: localhost:54324}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54324/devtoo..., se:cdpVersion: 142.0.3595.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: db640c1a7e985db5212c56cc984f4bd6
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+at Pages.AllProductsPage.getProductPrices(AllProductsPage.java:510)
+at tests.AllProductsTests.TestSortByFilter(AllProductsTests.java:117)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestSortByFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:54:16 IST" name="tearDown" finished-at="2025-11-10T18:54:16 IST" duration-ms="253" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:54:16 IST" name="setUp" finished-at="2025-11-10T18:54:17 IST" duration-ms="869" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestStatusFilter()[pri:6, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:54:17 IST" name="TestStatusFilter" finished-at="2025-11-10T18:54:43 IST" duration-ms="25567" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[❌ Some products are NOT Active after applying 'Active' filter! expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: ❌ Some products are NOT Active after applying 'Active' filter! expected [true] but found [false]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
 at org.testng.Assert.assertTrue(Assert.java:57)
-at Pages.OrderManagementPage.checkOrderStatusFilter(OrderManagementPage.java:96)
-at tests.OrderManagementTest.OpenOrderManagmentpage(OrderManagementTest.java:33)
+at tests.AllProductsTests.TestStatusFilter(AllProductsTests.java:174)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -58,12 +525,358 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- TestStatusFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:54:43 IST" name="tearDown" finished-at="2025-11-10T18:54:43 IST" duration-ms="202" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:54:43 IST" name="setUp" finished-at="2025-11-10T18:54:44 IST" duration-ms="1201" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestAdvancedFilter()[pri:7, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:54:44 IST" name="TestAdvancedFilter" finished-at="2025-11-10T18:55:01 IST" duration-ms="16561" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestAdvancedFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:01 IST" name="tearDown" finished-at="2025-11-10T18:55:01 IST" duration-ms="258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:01 IST" name="setUp" finished-at="2025-11-10T18:55:02 IST" duration-ms="892" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testActionSection()[pri:9, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:02 IST" name="testActionSection" finished-at="2025-11-10T18:55:15 IST" duration-ms="13384" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testActionSection -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:15 IST" name="tearDown" finished-at="2025-11-10T18:55:15 IST" duration-ms="265" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:15 IST" name="setUp" finished-at="2025-11-10T18:55:16 IST" duration-ms="829" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="AddnewProductBTN()[pri:10, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:16 IST" name="AddnewProductBTN" finished-at="2025-11-10T18:55:21 IST" duration-ms="5294" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddnewProductBTN -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:21 IST" name="tearDown" finished-at="2025-11-10T18:55:22 IST" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:22 IST" name="setUp" finished-at="2025-11-10T18:55:23 IST" duration-ms="871" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestToggleByIndex()[pri:11, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:23 IST" name="TestToggleByIndex" finished-at="2025-11-10T18:55:37 IST" duration-ms="14849" status="FAIL">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[No toggle buttons found on the page!]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: No toggle buttons found on the page!
+at Pages.AllProductsPage.toggleStatusByIndex(AllProductsPage.java:396)
+at tests.AllProductsTests.TestToggleByIndex(AllProductsTests.java:367)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestToggleByIndex -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:37 IST" name="tearDown" finished-at="2025-11-10T18:55:38 IST" duration-ms="239" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:38 IST" name="setUp" finished-at="2025-11-10T18:55:39 IST" duration-ms="941" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestFilterProductsByCategory()[pri:12, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:39 IST" name="TestFilterProductsByCategory" finished-at="2025-11-10T18:55:54 IST" duration-ms="15046" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of any elements located by By.xpath: //a[contains(@class,'fs-xsmall') and contains(@class,'text-secondary')] (tried for 4 second(s) with 500 milliseconds interval)
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.69, fedcm:accounts: true, goog:processID: 25184, ms:edgeOptions: {debuggerAddress: localhost:59315}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59315/devtoo..., se:cdpVersion: 142.0.3595.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1092c414712575761ab005de5efa2919]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of any elements located by By.xpath: //a[contains(@class,'fs-xsmall') and contains(@class,'text-secondary')] (tried for 4 second(s) with 500 milliseconds interval)
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.69, fedcm:accounts: true, goog:processID: 25184, ms:edgeOptions: {debuggerAddress: localhost:59315}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59315/devtoo..., se:cdpVersion: 142.0.3595.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1092c414712575761ab005de5efa2919
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+at Pages.AllProductsPage.selectCategory(AllProductsPage.java:467)
+at tests.AllProductsTests.TestFilterProductsByCategory(AllProductsTests.java:404)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestFilterProductsByCategory -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AllProductsTests@13bc8645]" started-at="2025-11-10T18:55:54 IST" name="tearDown" finished-at="2025-11-10T18:55:54 IST" duration-ms="219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.AllProductsTests -->
+    </test> <!-- Product Management Tests -->
+    <test started-at="2025-11-10T19:00:37 IST" name="Discount Management Tests" finished-at="2025-11-10T19:05:03 IST" duration-ms="266367">
+      <class name="tests.OrderManagementTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.OrderManagementTest@2a7ed1f]" started-at="2025-11-10T19:03:49 IST" name="setUp" finished-at="2025-11-10T19:03:50 IST" duration-ms="840" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="OpenOrderManagmentpage()[pri:1, instance:tests.OrderManagementTest@2a7ed1f]" started-at="2025-11-10T19:03:50 IST" name="OpenOrderManagmentpage" finished-at="2025-11-10T19:04:27 IST" duration-ms="36687" status="PASS">
+          <reporter-output>
+          </reporter-output>
         </test-method> <!-- OpenOrderManagmentpage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.OrderManagementTest@54d9d12d]" started-at="2025-11-08T19:19:08 IST" name="tearDown" finished-at="2025-11-08T19:19:08 IST" duration-ms="502" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.OrderManagementTest@2a7ed1f]" started-at="2025-11-10T19:04:27 IST" name="tearDown" finished-at="2025-11-10T19:04:27 IST" duration-ms="247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.OrderManagementTest@2a7ed1f]" started-at="2025-11-10T19:04:27 IST" name="setUp" finished-at="2025-11-10T19:04:28 IST" duration-ms="803" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="CalculationlogicforAllOrderValidation()[pri:2, instance:tests.OrderManagementTest@2a7ed1f]" started-at="2025-11-10T19:04:28 IST" name="CalculationlogicforAllOrderValidation" finished-at="2025-11-10T19:04:58 IST" duration-ms="29616" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CalculationlogicforAllOrderValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.OrderManagementTest@2a7ed1f]" started-at="2025-11-10T19:04:58 IST" name="tearDown" finished-at="2025-11-10T19:04:58 IST" duration-ms="186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.OrderManagementTest@2a7ed1f]" started-at="2025-11-10T19:04:58 IST" name="setUp" finished-at="2025-11-10T19:04:59 IST" duration-ms="978" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="ValidatePriceTaxShippingTotals()[pri:3, instance:tests.OrderManagementTest@2a7ed1f]" started-at="2025-11-10T19:04:59 IST" name="ValidatePriceTaxShippingTotals" finished-at="2025-11-10T19:05:03 IST" duration-ms="4235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidatePriceTaxShippingTotals -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.OrderManagementTest@2a7ed1f]" started-at="2025-11-10T19:05:03 IST" name="tearDown" finished-at="2025-11-10T19:05:03 IST" duration-ms="178" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.OrderManagementTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="tests.BrandsManagementTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:02:28 IST" name="setUp" finished-at="2025-11-10T19:02:29 IST" duration-ms="889" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="checkFullFlowOfBrandManagement()[pri:1, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:02:29 IST" name="checkFullFlowOfBrandManagement" finished-at="2025-11-10T19:02:44 IST" duration-ms="14811" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkFullFlowOfBrandManagement -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:02:44 IST" name="tearDown" finished-at="2025-11-10T19:02:44 IST" duration-ms="217" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:02:44 IST" name="setUp" finished-at="2025-11-10T19:02:45 IST" duration-ms="1487" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="resetButtonFlow()[pri:2, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:02:45 IST" name="resetButtonFlow" finished-at="2025-11-10T19:03:02 IST" duration-ms="16502" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetButtonFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:03:02 IST" name="tearDown" finished-at="2025-11-10T19:03:02 IST" duration-ms="239" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:03:02 IST" name="setUp" finished-at="2025-11-10T19:03:03 IST" duration-ms="1105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="AddnewBrandFullflow()[pri:3, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:03:03 IST" name="AddnewBrandFullflow" finished-at="2025-11-10T19:03:33 IST" duration-ms="29730" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddnewBrandFullflow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:03:33 IST" name="tearDown" finished-at="2025-11-10T19:03:33 IST" duration-ms="250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:03:33 IST" name="setUp" finished-at="2025-11-10T19:03:34 IST" duration-ms="867" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyErrorCountTest()[pri:4, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:03:34 IST" name="verifyErrorCountTest" finished-at="2025-11-10T19:03:40 IST" duration-ms="5522" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyErrorCountTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:03:40 IST" name="tearDown" finished-at="2025-11-10T19:03:40 IST" duration-ms="244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:03:40 IST" name="setUp" finished-at="2025-11-10T19:03:41 IST" duration-ms="884" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="EdirActionButtonFlow()[pri:5, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:03:41 IST" name="EdirActionButtonFlow" finished-at="2025-11-10T19:03:49 IST" duration-ms="8382" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EdirActionButtonFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.BrandsManagementTest@4ea5b703]" started-at="2025-11-10T19:03:49 IST" name="tearDown" finished-at="2025-11-10T19:03:49 IST" duration-ms="245" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.BrandsManagementTest -->
+      <class name="tests.Dicountmanagement">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:00:37 IST" name="setUp" finished-at="2025-11-10T19:00:38 IST" duration-ms="818" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUpTest()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:00:38 IST" name="setUpTest" finished-at="2025-11-10T19:00:41 IST" duration-ms="3776" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method signature="validateAddNewDiscount_PositiveFlow()[pri:1, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:00:41 IST" name="validateAddNewDiscount_PositiveFlow" finished-at="2025-11-10T19:01:16 IST" duration-ms="34587" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAddNewDiscount_PositiveFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:16 IST" name="tearDown" finished-at="2025-11-10T19:01:16 IST" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:16 IST" name="setUp" finished-at="2025-11-10T19:01:17 IST" duration-ms="945" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUpTest()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:17 IST" name="setUpTest" finished-at="2025-11-10T19:01:21 IST" duration-ms="3481" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method signature="verifyCategorySubcategoryDependency()[pri:2, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:21 IST" name="verifyCategorySubcategoryDependency" description="Verify Dropdown Dependency Flow: Category → SubCategory → ProductType" finished-at="2025-11-10T19:01:22 IST" duration-ms="948" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCategorySubcategoryDependency -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:22 IST" name="tearDown" finished-at="2025-11-10T19:01:22 IST" duration-ms="200" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:22 IST" name="setUp" finished-at="2025-11-10T19:01:23 IST" duration-ms="876" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUpTest()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:23 IST" name="setUpTest" finished-at="2025-11-10T19:01:26 IST" duration-ms="3852" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method signature="validateNoSelection_ShowsError()[pri:3, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:26 IST" name="validateNoSelection_ShowsError" finished-at="2025-11-10T19:01:27 IST" duration-ms="343" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateNoSelection_ShowsError -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:27 IST" name="tearDown" finished-at="2025-11-10T19:01:27 IST" duration-ms="185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:27 IST" name="setUp" finished-at="2025-11-10T19:01:28 IST" duration-ms="1238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUpTest()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:28 IST" name="setUpTest" finished-at="2025-11-10T19:01:32 IST" duration-ms="3595" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method signature="verifyDiscountHistoryAndBackButton()[pri:4, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:32 IST" name="verifyDiscountHistoryAndBackButton" finished-at="2025-11-10T19:01:37 IST" duration-ms="4871" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDiscountHistoryAndBackButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:37 IST" name="tearDown" finished-at="2025-11-10T19:01:37 IST" duration-ms="246" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:37 IST" name="setUp" finished-at="2025-11-10T19:01:39 IST" duration-ms="1600" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUpTest()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:39 IST" name="setUpTest" finished-at="2025-11-10T19:01:42 IST" duration-ms="3305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method signature="verifyStatusDropdownSorting()[pri:5, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:01:42 IST" name="verifyStatusDropdownSorting" finished-at="2025-11-10T19:02:23 IST" duration-ms="41028" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyStatusDropdownSorting -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:02:23 IST" name="tearDown" finished-at="2025-11-10T19:02:23 IST" duration-ms="236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:02:23 IST" name="setUp" finished-at="2025-11-10T19:02:24 IST" duration-ms="832" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUpTest()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:02:24 IST" name="setUpTest" finished-at="2025-11-10T19:02:27 IST" duration-ms="3404" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method signature="verifySearchAndCategoryFilter()[pri:6, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:02:27 IST" name="verifySearchAndCategoryFilter" finished-at="2025-11-10T19:02:28 IST" duration-ms="373" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchAndCategoryFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Dicountmanagement@2205a05d]" started-at="2025-11-10T19:02:28 IST" name="tearDown" finished-at="2025-11-10T19:02:28 IST" duration-ms="219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.Dicountmanagement -->
+    </test> <!-- Discount Management Tests -->
+  </suite> <!-- Actpal Suite -->
 </testng-results>

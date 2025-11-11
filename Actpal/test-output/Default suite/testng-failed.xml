@@ -7,7 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="OpenOrderManagmentpage"/>
+          <include name="ValidatePriceTaxShippingTotals"/>
         </methods>
       </class> <!-- tests.OrderManagementTest -->
     </classes>

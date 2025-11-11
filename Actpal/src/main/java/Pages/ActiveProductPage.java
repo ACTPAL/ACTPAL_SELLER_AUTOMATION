@@ -33,7 +33,7 @@ public class ActiveProductPage {
 	
 	public boolean clickActiveProductBtn() {
 	    try {
-	        // 1️⃣ Click Manage Product button
+	        
 	        driver.findElement(manageProductBtn).click();
 
 	        // 2️⃣ Wait for page to stabilize before scroll

@@ -8,45 +8,101 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">18,252</td><td></td><td></td></tr>
+<tr><th colspan="8">Actpal Suite</th></tr>
+<tr><td><a href="#t0">User Authentication Tests</a></td><td class="num">8</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">25,951</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Password Recovery Tests</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">7,821</td><td></td><td></td></tr>
+<tr><td><a href="#t2">Product Management Tests</a></td><td class="num">22</td><td class="num">0</td><td class="num">0</td><td class="num attn">5</td><td class="num">426,071</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">Discount Management Tests</a></td><td class="num">14</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">266,367</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">46</th><th class="num">0</th><th class="num">0</th><th class="num attn">5</th><th class="num">726,210</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">tests.OrderManagementTest</td><td><a href="#m0">OpenOrderManagmentpage</a></td><td rowspan="1">1762609732510</td><td rowspan="1">15634</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Actpal Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">User Authentication Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">tests.LoginTests</td><td><a href="#m0">Checkforgotpassbtn</a></td><td rowspan="1">1762781001029</td><td rowspan="1">396</td></tr><tr class="passedeven"><td><a href="#m1">Createaccount</a></td><td rowspan="1">1762781002450</td><td rowspan="1">400</td></tr><tr class="passedeven"><td><a href="#m2">TestInvalxpathEmail</a></td><td rowspan="1">1762780998018</td><td rowspan="1">488</td></tr><tr class="passedeven"><td><a href="#m3">TestInvalxpathPassword</a></td><td rowspan="1">1762780999587</td><td rowspan="1">451</td></tr><tr class="passedeven"><td><a href="#m4">TestValxpathLogin</a></td><td rowspan="1">1762780995256</td><td rowspan="1">1762</td></tr><tr class="passedodd"><td rowspan="3">tests.RegisterTests</td><td><a href="#m5">TestUserRegistration</a></td><td rowspan="1">1762780978694</td><td rowspan="1">7656</td></tr><tr class="passedodd"><td><a href="#m6">UserRegistrationDuplicateEmail</a></td><td rowspan="1">1762780987518</td><td rowspan="1">2926</td></tr><tr class="passedodd"><td><a href="#m7">UserRegistrationDuplicateuserName</a></td><td rowspan="1">1762780991548</td><td rowspan="1">2652</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Password Recovery Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">tests.ForgotPasswordTests</td><td><a href="#m8">TestResetPasswordWithValidemail</a></td><td rowspan="1">1762781004147</td><td rowspan="1">2288</td></tr><tr class="passedeven"><td><a href="#m9">TestResetPasswordWithinvlaidemail</a></td><td rowspan="1">1762781007470</td><td rowspan="1">3365</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">Product Management Tests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">tests.ActiveProductTest</td><td><a href="#m10">testActionSection</a></td><td rowspan="1">1762781293859</td><td rowspan="1">18028</td></tr><tr class="failedodd"><td rowspan="4">tests.AllProductsTests</td><td><a href="#m11">TestFilterProductsByCategory</a></td><td rowspan="1">1762781139129</td><td rowspan="1">15046</td></tr><tr class="failedodd"><td><a href="#m12">TestSortByFilter</a></td><td rowspan="1">1762781039158</td><td rowspan="1">17240</td></tr><tr class="failedodd"><td><a href="#m13">TestStatusFilter</a></td><td rowspan="1">1762781057523</td><td rowspan="1">25567</td></tr><tr class="failedodd"><td><a href="#m14">TestToggleByIndex</a></td><td rowspan="1">1762781123098</td><td rowspan="1">14849</td></tr><tr><th colspan="4">Product Management Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="11">tests.ActiveProductTest</td><td><a href="#m15">AddnewProductBTN</a></td><td rowspan="1">1762781313025</td><td rowspan="1">14206</td></tr><tr class="passedeven"><td><a href="#m16">TestActiveProductPageLoads</a></td><td rowspan="1">1762781155487</td><td rowspan="1">13303</td></tr><tr class="passedeven"><td><a href="#m17">TestActiveProductView</a></td><td rowspan="1">1762781361168</td><td rowspan="1">15335</td></tr><tr class="passedeven"><td><a href="#m18">TestAdvancedFilter</a></td><td rowspan="1">1762781274182</td><td rowspan="1">18651</td></tr><tr class="passedeven"><td><a href="#m19">TestExportCSVFunctionality</a></td><td rowspan="1">1762781200706</td><td rowspan="1">13511</td></tr><tr class="passedeven"><td><a href="#m20">TestFilterProductsByCategory</a></td><td rowspan="1">1762781344382</td><td rowspan="1">15421</td></tr><tr class="passedeven"><td><a href="#m21">TestResetButton</a></td><td rowspan="1">1762781184896</td><td rowspan="1">14317</td></tr><tr class="passedeven"><td><a href="#m22">TestSearchKeywordFilter</a></td><td rowspan="1">1762781169887</td><td rowspan="1">13953</td></tr><tr class="passedeven"><td><a href="#m23">TestSortByFilter</a></td><td rowspan="1">1762781215505</td><td rowspan="1">32035</td></tr><tr class="passedeven"><td><a href="#m24">TestStatusFilter</a></td><td rowspan="1">1762781249006</td><td rowspan="1">24039</td></tr><tr class="passedeven"><td><a href="#m25">TestToggleByIndex</a></td><td rowspan="1">1762781328403</td><td rowspan="1">15008</td></tr><tr class="passedodd"><td rowspan="4">tests.AddProductTest</td><td><a href="#m26">CheckDupicatproduct</a></td><td rowspan="1">1762781401569</td><td rowspan="1">7821</td></tr><tr class="passedodd"><td><a href="#m27">TestAddNewProductFullFlow</a></td><td rowspan="1">1762781377586</td><td rowspan="1">22831</td></tr><tr class="passedodd"><td><a href="#m28">TestMandatoryBasicDetailsValidationSeparate</a></td><td rowspan="1">1762781410506</td><td rowspan="1">19348</td></tr><tr class="passedodd"><td><a href="#m29">VerifyCategorySubcategoryDependency</a></td><td rowspan="1">1762781430852</td><td rowspan="1">6090</td></tr><tr class="passedeven"><td rowspan="7">tests.AllProductsTests</td><td><a href="#m30">AddnewProductBTN</a></td><td rowspan="1">1762781116685</td><td rowspan="1">5294</td></tr><tr class="passedeven"><td><a href="#m31">TestAdvancedFilter</a></td><td rowspan="1">1762781084494</td><td rowspan="1">16561</td></tr><tr class="passedeven"><td><a href="#m32">TestAllProductPageLoads</a></td><td rowspan="1">1762781011968</td><td rowspan="1">4861</td></tr><tr class="passedeven"><td><a href="#m33">TestExportCSVFunctionality</a></td><td rowspan="1">1762781033186</td><td rowspan="1">4896</td></tr><tr class="passedeven"><td><a href="#m34">TestResetButton</a></td><td rowspan="1">1762781025364</td><td rowspan="1">6420</td></tr><tr class="passedeven"><td><a href="#m35">TestSearchKeywordFilter</a></td><td rowspan="1">1762781017906</td><td rowspan="1">5887</td></tr><tr class="passedeven"><td><a href="#m36">testActionSection</a></td><td rowspan="1">1762781102206</td><td rowspan="1">13384</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">Discount Management Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">tests.BrandsManagementTest</td><td><a href="#m37">AddnewBrandFullflow</a></td><td rowspan="1">1762781583696</td><td rowspan="1">29730</td></tr><tr class="passedeven"><td><a href="#m38">EdirActionButtonFlow</a></td><td rowspan="1">1762781621195</td><td rowspan="1">8382</td></tr><tr class="passedeven"><td><a href="#m39">checkFullFlowOfBrandManagement</a></td><td rowspan="1">1762781549334</td><td rowspan="1">14811</td></tr><tr class="passedeven"><td><a href="#m40">resetButtonFlow</a></td><td rowspan="1">1762781565849</td><td rowspan="1">16502</td></tr><tr class="passedeven"><td><a href="#m41">verifyErrorCountTest</a></td><td rowspan="1">1762781614544</td><td rowspan="1">5522</td></tr><tr class="passedodd"><td rowspan="6">tests.Dicountmanagement</td><td><a href="#m42">validateAddNewDiscount_PositiveFlow</a></td><td rowspan="1">1762781441821</td><td rowspan="1">34587</td></tr><tr class="passedodd"><td><a href="#m43">validateNoSelection_ShowsError</a></td><td rowspan="1">1762781486961</td><td rowspan="1">343</td></tr><tr class="passedodd"><td><a href="#m44">verifyCategorySubcategoryDependency</a></td><td rowspan="1">1762781481084</td><td rowspan="1">948</td></tr><tr class="passedodd"><td><a href="#m45">verifyDiscountHistoryAndBackButton</a></td><td rowspan="1">1762781492322</td><td rowspan="1">4871</td></tr><tr class="passedodd"><td><a href="#m46">verifySearchAndCategoryFilter</a></td><td rowspan="1">1762781547852</td><td rowspan="1">373</td></tr><tr class="passedodd"><td><a href="#m47">verifyStatusDropdownSorting</a></td><td rowspan="1">1762781502352</td><td rowspan="1">41028</td></tr><tr class="passedeven"><td rowspan="3">tests.OrderManagementTest</td><td><a href="#m48">CalculationlogicforAllOrderValidation</a></td><td rowspan="1">1762781668399</td><td rowspan="1">29616</td></tr><tr class="passedeven"><td><a href="#m49">OpenOrderManagmentpage</a></td><td rowspan="1">1762781630662</td><td rowspan="1">36687</td></tr><tr class="passedeven"><td><a href="#m50">ValidatePriceTaxShippingTotals</a></td><td rowspan="1">1762781699180</td><td rowspan="1">4235</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">tests.OrderManagementTest#OpenOrderManagmentpage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: ❌ Wrong status shown!
-Expected: Payment Failed
-Found Class: activeBtn Delivered expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at Pages.OrderManagementPage.checkOrderStatusFilter(OrderManagementPage.java:96)
-	at tests.OrderManagementTest.OpenOrderManagmentpage(OrderManagementTest.java:33)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+<h2>User Authentication Tests</h2><h3 id="m0">tests.LoginTests#Checkforgotpassbtn</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">tests.LoginTests#Createaccount</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">tests.LoginTests#TestInvalxpathEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">tests.LoginTests#TestInvalxpathPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">tests.LoginTests#TestValxpathLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">tests.RegisterTests#TestUserRegistration</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">tests.RegisterTests#UserRegistrationDuplicateEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">tests.RegisterTests#UserRegistrationDuplicateuserName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Password Recovery Tests</h2><h3 id="m8">tests.ForgotPasswordTests#TestResetPasswordWithValidemail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">tests.ForgotPasswordTests#TestResetPasswordWithinvlaidemail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Product Management Tests</h2><h3 id="m10">tests.ActiveProductTest#testActionSection</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalArgumentException: ❌ Invalid index: 0. Must be between 1 and 11
+	at Pages.AllProductsPage.clickEditIcon(AllProductsPage.java:337)
+	at tests.ActiveProductTest.testActionSection(ActiveProductTest.java:285)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">tests.AllProductsTests#TestFilterProductsByCategory</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of any elements located by By.xpath: //a[contains(@class,&apos;fs-xsmall&apos;) and contains(@class,&apos;text-secondary&apos;)] (tried for 4 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.69, fedcm:accounts: true, goog:processID: 25184, ms:edgeOptions: {debuggerAddress: localhost:59315}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59315/devtoo..., se:cdpVersion: 142.0.3595.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1092c414712575761ab005de5efa2919
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at Pages.AllProductsPage.selectCategory(AllProductsPage.java:467)
+	at tests.AllProductsTests.TestFilterProductsByCategory(AllProductsTests.java:404)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">tests.AllProductsTests#TestSortByFilter</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all elements located by By.cssSelector: td.w-12 (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.69, fedcm:accounts: true, goog:processID: 11816, ms:edgeOptions: {debuggerAddress: localhost:54324}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54324/devtoo..., se:cdpVersion: 142.0.3595.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: db640c1a7e985db5212c56cc984f4bd6
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at Pages.AllProductsPage.getProductPrices(AllProductsPage.java:510)
+	at tests.AllProductsTests.TestSortByFilter(AllProductsTests.java:117)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">tests.AllProductsTests#TestStatusFilter</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: ❌ Some products are NOT Active after applying &apos;Active&apos; filter! expected [true] but found [false]
+	at tests.AllProductsTests.TestStatusFilter(AllProductsTests.java:174)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">tests.AllProductsTests#TestToggleByIndex</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: No toggle buttons found on the page!
+	at Pages.AllProductsPage.toggleStatusByIndex(AllProductsPage.java:396)
+	at tests.AllProductsTests.TestToggleByIndex(AllProductsTests.java:367)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">tests.ActiveProductTest#AddnewProductBTN</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">tests.ActiveProductTest#TestActiveProductPageLoads</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m17">tests.ActiveProductTest#TestActiveProductView</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m18">tests.ActiveProductTest#TestAdvancedFilter</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m19">tests.ActiveProductTest#TestExportCSVFunctionality</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m20">tests.ActiveProductTest#TestFilterProductsByCategory</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m21">tests.ActiveProductTest#TestResetButton</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m22">tests.ActiveProductTest#TestSearchKeywordFilter</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m23">tests.ActiveProductTest#TestSortByFilter</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m24">tests.ActiveProductTest#TestStatusFilter</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m25">tests.ActiveProductTest#TestToggleByIndex</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m26">tests.AddProductTest#CheckDupicatproduct</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m27">tests.AddProductTest#TestAddNewProductFullFlow</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m28">tests.AddProductTest#TestMandatoryBasicDetailsValidationSeparate</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m29">tests.AddProductTest#VerifyCategorySubcategoryDependency</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m30">tests.AllProductsTests#AddnewProductBTN</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m31">tests.AllProductsTests#TestAdvancedFilter</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m32">tests.AllProductsTests#TestAllProductPageLoads</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m33">tests.AllProductsTests#TestExportCSVFunctionality</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m34">tests.AllProductsTests#TestResetButton</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m35">tests.AllProductsTests#TestSearchKeywordFilter</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m36">tests.AllProductsTests#testActionSection</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Discount Management Tests</h2><h3 id="m37">tests.BrandsManagementTest#AddnewBrandFullflow</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m38">tests.BrandsManagementTest#EdirActionButtonFlow</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m39">tests.BrandsManagementTest#checkFullFlowOfBrandManagement</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m40">tests.BrandsManagementTest#resetButtonFlow</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m41">tests.BrandsManagementTest#verifyErrorCountTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m42">tests.Dicountmanagement#validateAddNewDiscount_PositiveFlow</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m43">tests.Dicountmanagement#validateNoSelection_ShowsError</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m44">tests.Dicountmanagement#verifyCategorySubcategoryDependency</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m45">tests.Dicountmanagement#verifyDiscountHistoryAndBackButton</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m46">tests.Dicountmanagement#verifySearchAndCategoryFilter</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m47">tests.Dicountmanagement#verifyStatusDropdownSorting</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m48">tests.OrderManagementTest#CalculationlogicforAllOrderValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m49">tests.OrderManagementTest#OpenOrderManagmentpage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m50">tests.OrderManagementTest#ValidatePriceTaxShippingTotals</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

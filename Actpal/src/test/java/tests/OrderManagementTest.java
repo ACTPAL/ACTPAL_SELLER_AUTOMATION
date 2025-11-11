@@ -32,13 +32,42 @@ public class OrderManagementTest extends BaseTest {
 	        OrderManagementPage orderPage = new OrderManagementPage(driver);
 	        orderPage.OpenOrderManagamntPage();
 	        orderPage.checkOrderStatusFilter("Payment Failed");
+	        orderPage.ResetButton();
+	        orderPage.CheckSearchFunctionality("Rajeev");
+	}
 
-	        
-	        
-		
-		
+	@Test(priority = 2)
+	
+	public  void  CalculationlogicforAllOrderValidation () throws InterruptedException {
+		Logger.log("=== Starting Brand Management Search Test ===");
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.enterEmail("jump2brand@gmail.com");
+        loginPage.enterPassword("Test@123");
+        loginPage.clickLogin();
+        closePopups(1);
+        Assert.assertTrue(loginPage.getSuccessMessage().contains("Dashboard"), "❌ Login failed");
+        OrderManagementPage orderPage = new OrderManagementPage(driver);
+        orderPage.OpenOrderManagamntPage();  
+        orderPage.CalculationLogicForAllOrderValidation();
 	}
 	
+	
+	@Test(priority = 3)
+	
+	public void ValidatePriceTaxShippingTotals() throws InterruptedException{
+		Logger.log("=== Starting Brand Management Search Test ===");
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.enterEmail("jump2brand@gmail.com");
+        loginPage.enterPassword("Test@123");
+        loginPage.clickLogin();
+        closePopups(1);
+        Assert.assertTrue(loginPage.getSuccessMessage().contains("Dashboard"), "❌ Login failed");
+        OrderManagementPage orderPage = new OrderManagementPage(driver);
+        orderPage.OpenOrderManagamntPage();
+        orderPage.validatePriceTaxShippingTotals();
+       
+	}
+
 	private void closePopups(int attempts) {
         for (int i = 0; i < attempts; i++) {
             try {
