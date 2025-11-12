@@ -1,9 +1,9 @@
-<!----><suite name="Actpal Suite" verbose="1">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Actpal Suite" verbose="1">
     <listeners>
         <listener class-name="base.ExtentListener"/>
     </listeners>
 
-    
     <test name="User Authentication Tests">
         <classes>
             <class name="tests.RegisterTests"/>
@@ -24,9 +24,8 @@
             <class name="tests.AddProductTest"/>
         </classes>
     </test>
-    
 
-     ✅ Only Group 4 
+    <!-- ✅ Only Group 4 -->
     <test name="Discount Management Tests">
         <classes>
             <class name="tests.Dicountmanagement"/>

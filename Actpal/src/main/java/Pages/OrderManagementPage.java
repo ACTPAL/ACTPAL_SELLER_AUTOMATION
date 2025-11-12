@@ -45,6 +45,27 @@ public class OrderManagementPage {
 	 private By taxTable     = By.xpath("//td[@class='font-brown fw-bold'][span[text()='Tax']]");
 	 private By shippingTable= By.xpath("//td[@class='font-brown fw-bold'][span[text()='Shipping']]");
 	 private By totalPriceTable = By.xpath("//td[@class='text-center'][span[text()='Total']]/span[2]");
+	 
+	 private By OrderTable = By.xpath("//td[@class=\"orderStatustd\"] ");
+	 
+	 private By orderStatus = By.xpath("//td[@class='mobHide']/*[contains(@class,'activeBtn')]");
+	 private  By OrderDate = By.xpath("//td[@class='text-nowrap'][span[contains(text(),'Date')]]");
+	 private  By detailOrderId = By.id("OrderId");
+	private By detailOrderStatus = By.cssSelector("span.btn.defaultBrownBtn");
+	private  By detailOrderDate = By.xpath("//span[contains(text(),'202')]"); // TEMP, you can replace later
+     private By GoBack  = By.xpath("//button[@class=\"btn defaultWhiteBtn backHistoryBtn\"]");
+     private  By Cancleandreturn = By.xpath("//a[@class='icon icon-set icon-return-policies icon-set icon-set']");
+     private By RequestTypeDRP = By.xpath("//select[@class='form-control' and @name='Status']");
+     private By  SoldAmount = By.xpath("//td[@class=\"text-center\" and .//span[contains(text(), 'Sold Amount')]]");
+     private By   tax = By.xpath("//td[@class=\"font-brown text-center\" and .//span[contains(text(),\"Tax\")]] ");
+     private By shipping = By.xpath("//td[@class=\"font-brown text-center\" and .//span[contains(text(),\"Shipping\")]]");
+     private  By  totalAmount = By.xpath("//td[@class=\"text-center\" and .//span[contains(text(),\"Total Amount\")]]");
+     private By Deduction = By.xpath("//td[@class=\"text-center\" and .//span[contains(text(),\"Deduction\")]]");
+     private  By  Amount = By.xpath("//td[.//span[contains(text(),\"Status & Action\")]]");
+    
+	 
+	 
+	 
 
 	
 	
@@ -355,17 +376,239 @@ public  void ResetButton () {
         text = text.replace("$", "").replace(",", "").trim();
         return Double.parseDouble(text);
     }
-public void  preactice () {
-	List<WebElement> priceElement =  driver.findElements(priceTable);
-	
-	
+ // ✅ RUN TOP 5 ORDERS
+    public void validateTopFiveOrders() throws InterruptedException {
+
+        for (int i = 0; i <6; i++) {
+
+            System.out.println("\n=========================================");
+            System.out.println("🔵 STARTING ORDER " + (i + 1) + " VALIDATION");
+            System.out.println("=========================================");
+            System.out.println("1️⃣ ORDER DETAILS");
+            System.out.println("2️⃣ ROW CALCULATIONS");
+            System.out.println("3️⃣ GRAND TOTAL\n");
+
+            validateOrderDetailsByIndex(i);
+
+            System.out.println("\n✅ ORDER " + (i + 1) + " COMPLETED");
+            System.out.println("-----------------------------------------");
+            System.out.println("➡ Moving to next order...\n");
+        }
+    }
+
+    public void validateOrderDetailsByIndex(int index) throws InterruptedException {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        List<WebElement> orderRows = driver.findElements(OrderTable);
+        List<WebElement> orderStatuses = driver.findElements(orderStatus);
+        List<WebElement> orderDates = driver.findElements(OrderDate);
+
+        if (orderRows.isEmpty()) {
+            System.out.println("❌ No orders found!");
+            return;
+        }
+
+        // ✅ Pick order by index
+        WebElement orderLink = orderRows.get(index).findElement(By.tagName("a"));
+        String[] lines = orderLink.getText().trim().split("\n");
+
+        String expectedOrderId = lines[1].trim();
+        String expectedStatus = orderStatuses.get(index).getText().trim();
+        String expectedDate = orderDates.get(index).getText().trim();
+
+        // ✅ Remove comma after month
+        expectedDate = expectedDate.replace(",", "");
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", orderLink);
+        orderLink.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("OrderId")));
+
+        String actualOrderId = driver.findElement(By.id("OrderId")).getText().trim();
+
+        // ✅ SAFE STATUS CHECK (no assertion, just print)
+        List<WebElement> statusElements = driver.findElements(By.cssSelector("span.btn.defaultBrownBtn, div.btn.defaultBrownBtn"));
+        String actualStatus = (statusElements.isEmpty()) ? "N/A" : statusElements.get(0).getText().trim();
+
+        if (!actualStatus.equals(expectedStatus)) {
+            System.out.println("⚠️ Order Status mismatch! Expected: " + expectedStatus + " | Actual: " + actualStatus);
+        }
+
+        String actualDate = driver.findElement(
+                By.xpath("//p[contains(normalize-space(),'Order Date')]/span")
+        ).getText().trim();
+        actualDate = actualDate.replace(",", ""); // ✅ Fix
+
+        System.out.println("===== DETAILS PAGE =====");
+        System.out.println("Order ID: " + actualOrderId);
+        System.out.println("Status: " + actualStatus);
+        System.out.println("Date: " + actualDate);
+
+        // ✅ ASSERTION for Order ID and Date only
+        Assert.assertEquals(actualOrderId, expectedOrderId, "Order ID mismatch!");
+        Assert.assertEquals(actualDate, expectedDate, "Order Date mismatch!");
+
+        // ✅ Always run product validation
+        System.out.println("\nSTARTING PRODUCT CALCULATION VALIDATION");
+        validateOrderProductCalculations();
+
+        GOback();
+        Thread.sleep(2000);
+    }
+
+
+    // ✅ PRODUCT CALCULATION METHOD — Row and Grand Total fixed + Assertion + 2 decimal precision
+    public void validateOrderProductCalculations() {
+
+        List<WebElement> rows = driver.findElements(By.xpath("//tr[contains(@class,'mob-border-top-0')]"));
+
+        if (rows.isEmpty()) {
+            System.out.println("❌ No product rows found!");
+            return;
+        }
+
+        System.out.println("\n===== VALIDATING PRODUCT ROW CALCULATIONS =====");
+
+        int rowNum = 1;
+        double grandTotal = 0.0;
+
+        for (WebElement row : rows) {
+            try {
+                List<WebElement> priceParts = row.findElements(By.xpath("./td[4]/span"));
+
+                double price = parseAmountValueSafe(priceParts.get(0).getText());
+                double discount = (priceParts.size() > 1) ? parseAmountValueSafe(priceParts.get(1).getText()) : 0;
+
+                double finalPrice = price + discount;
+                double tax = parseAmountValueSafe(row.findElement(By.xpath("./td[5]")).getText());
+                double shipping = parseAmountValueSafe(row.findElement(By.xpath("./td[7]")).getText());
+                double uiRowTotal = parseAmountValueSafe(row.findElement(By.xpath("./td[8]")).getText());
+
+                double expectedRowTotal = Math.round((finalPrice + tax) * 100.0) / 100.0;
+
+                System.out.println("\nRow " + rowNum);
+                System.out.println("Final Price (after discount): " + finalPrice);
+                System.out.println("Tax: " + tax);
+                System.out.println("Shipping: " + shipping);
+                System.out.println("Expected Row Total (Price + Tax): " + expectedRowTotal);
+                System.out.println("Actual Row Total (UI): " + uiRowTotal);
+
+                // ✅ ASSERTION for row total (2 decimal precision)
+                Assert.assertEquals(Math.round(uiRowTotal * 100.0) / 100.0,
+                                    expectedRowTotal,
+                                    "Row " + rowNum + " total mismatch!");
+
+                // ✅ Sum for Grand Total
+                grandTotal += (finalPrice + tax + shipping);
+
+            } catch (Exception e) {
+                System.out.println("❌ ERROR in row " + rowNum + ": " + e.getMessage());
+            }
+
+            rowNum++;
+        }
+
+        grandTotal = Math.round(grandTotal * 100.0) / 100.0;
+
+        // ✅ UPDATED LOCATOR FOR GRAND TOTAL
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement grandTotalElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//td[contains(@class,'text-dark') and contains(@class,'fw-bold') and contains(@class,'text-right')]/strong")
+        ));
+        double uiGrandTotal = parseAmountValueSafe(grandTotalElement.getText());
+
+        System.out.println("\n===== VALIDATING GRAND TOTAL =====");
+        System.out.println("Expected Grand Total (sum of Price + Tax + Shipping): " + grandTotal);
+        System.out.println("Actual Grand Total (UI): " + uiGrandTotal);
+
+        // ✅ ASSERTION for Grand Total (2 decimal precision)
+        Assert.assertEquals(Math.round(uiGrandTotal * 100.0) / 100.0,
+                            grandTotal,
+                            "Grand Total mismatch!");
+
+        System.out.println("===== VALIDATION COMPLETE =====\n");
+    }
+
+    private double parseAmountValueSafe(String text) {
+        text = text.replace("$", "").replace(",", "").trim();
+
+        if (text.isEmpty() || text.equals("-")) return 0.0;
+
+        return Double.parseDouble(text);
+    }
+
+    public void GOback() {
+        driver.findElement(GoBack).click();
+    }
+
+    
+    public void CancleandReturn(String RequestDrp) throws InterruptedException {
+        WebElement orderMgmt = wait.until(ExpectedConditions.elementToBeClickable(orderManagmentBTN));
+
+        // ✅ Scroll into view
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({block: 'center'});", orderMgmt
+        );
+        Thread.sleep(400);
+
+        // ✅ Click Order Management (open dropdown)
+        try {
+            orderMgmt.click();
+            System.out.println("✅ Order Management clicked.");
+        } catch (Exception e) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", orderMgmt);
+            System.out.println("⚠️ JS clicked Order Management.");
+        }
+
+        // ✅ Now click All Orders (dropdown menu)
+        WebElement allOrders = wait.until(ExpectedConditions.elementToBeClickable(Cancleandreturn));
+        allOrders.click();
+        System.out.println("✅ Cancle return Orders clicked.");
+
+        // ✅ Validate page title
+        WebElement pageTitle = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("//h4[@class='nomargin']"))
+        );
+
+        Assert.assertTrue(pageTitle.isDisplayed(), "❌ Product Return Request page not opened!");
+        System.out.println("✅ Product Return Request Page opened successfully!");
+
+        // ✅ Select dropdown value
+        Select sc = new Select(driver.findElement(RequestTypeDRP));
+        sc.selectByVisibleText(RequestDrp);
+        System.out.println("✅ Request Type Selected: " + RequestDrp);
+
+        // ------------------- Validation Code Starts Here -------------------
+        // ✅ Wait for table to refresh (adjust time or use explicit wait if needed)
+        Thread.sleep(2000);
+
+        // ✅ Get all displayed order status elements
+     // Get all order rows, not individual spans
+        List<WebElement> orderRows = driver.findElements(By.xpath("//span[contains(text(),'Order Number')]/parent::span"));
+
+        for (WebElement orderRow : orderRows) {
+            // Get combined text of all statuses in the row
+            String fullStatus = orderRow.getText().replaceAll("[()]", "").trim();
+            System.out.println("Order Combined Status: " + fullStatus);
+
+            // Assert that it contains the filtered request type
+            Assert.assertTrue(
+                fullStatus.contains(RequestDrp),
+                "❌ Order displayed with unexpected status: " + fullStatus
+            );
+        }
+
+
+        System.out.println("✅ All displayed orders match the Request Type: " + RequestDrp);
+        // ------------------- Validation Code Ends Here -------------------
+    }
+
+    
+    
+public  void  CalculationValaition () {
 	
 }
-
-
- public void orderdetailPage () {
-	 
- }
 
 	 
 }

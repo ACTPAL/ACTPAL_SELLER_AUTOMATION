@@ -278,7 +278,7 @@ public class ActiveProductTest extends BaseTest {
 
 	    	// Step 7: Click 'View' on first product and validate
 	    	Logger.log("Clicking 'View' on first product and validating");
-	    	page.clickViewAndValidate(0);
+	    	page.clickViewAndValidate(1);
 
 	    	// Step 8: Click 'Edit' icon on first product
 	    	Logger.log("Clicking 'Edit' icon on first product");

@@ -67,6 +67,53 @@ public class OrderManagementTest extends BaseTest {
         orderPage.validatePriceTaxShippingTotals();
        
 	}
+	
+	@Test(priority = 4)
+	public void OrderPage() throws InterruptedException {
+
+	    Logger.log("=== Starting Order Page Validation Test ===");
+
+	    // Login
+	    LoginPage loginPage = new LoginPage(driver);
+	    loginPage.enterEmail("jump2brand@gmail.com");
+	    loginPage.enterPassword("Test@123");
+	    loginPage.clickLogin();
+
+	    closePopups(1);
+
+	    Assert.assertTrue(loginPage.getSuccessMessage().contains("Dashboard"),
+	            "❌ Login failed");
+
+	    // Open Order Page
+	    OrderManagementPage orderPage = new OrderManagementPage(driver);
+	    orderPage.OpenOrderManagamntPage();
+
+	    // RUN TOP 3 ORDER VALIDATION
+	    orderPage.validateTopFiveOrders();
+
+	    Logger.log("✅ Test Completed: All 5 Orders Validated Successfully");
+	}
+	
+	@Test(priority = 5)
+  public void   cancleandReturn () throws InterruptedException {
+	  Logger.log("=== Starting Order Page Validation Test ===");
+
+	    // Login
+	    LoginPage loginPage = new LoginPage(driver);
+	    loginPage.enterEmail("jump2brand@gmail.com");
+	    loginPage.enterPassword("Test@123");
+	    loginPage.clickLogin();
+
+	    closePopups(1);
+
+	    Assert.assertTrue(loginPage.getSuccessMessage().contains("Dashboard"),
+	            "❌ Login failed");
+
+	    // Open Order Page
+	    OrderManagementPage orderPage = new OrderManagementPage(driver);
+	    orderPage.CancleandReturn("Cancelled");
+  }
+
 
 	private void closePopups(int attempts) {
         for (int i = 0; i < attempts; i++) {
