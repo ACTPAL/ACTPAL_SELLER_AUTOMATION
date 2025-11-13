@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import base.Logger;
+
 public class LoginPage {
 
     private WebDriver driver;
@@ -30,7 +32,7 @@ public class LoginPage {
    	  Assert.assertTrue(driver.findElement(emailField).isEnabled()," Email field is  not clickable");
         driver.findElement(emailField).clear();
         driver.findElement(emailField).sendKeys(email);
-        System.out.println("Email field is presemnt");
+        Logger.log("Email field is presemnt");
     }
 
     public void enterPassword(String password) {
@@ -71,7 +73,7 @@ public class LoginPage {
     	  Assert.assertTrue(driver.findElement(rememberMeCheckbox).isEnabled()," Remember me  button is  not clickable");
     	  
         driver.findElement(rememberMeCheckbox).click();
-        System.out.println(" Remebr me  button button is clickable");
+        Logger.log(" Remebr me  button button is clickable");
     }
 
    

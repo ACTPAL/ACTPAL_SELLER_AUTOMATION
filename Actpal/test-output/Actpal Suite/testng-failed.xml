@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Actpal Suite]">
+<suite name="Failed suite [Actpal Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="base.ExtentListener"/>
   </listeners>
   <test thread-count="5" name="Product Management Tests(failed)">
     <classes>
+      <class name="tests.AllProductsTests">
+        <methods>
+          <include name="setUp"/>
+          <include name="TestStatusFilter"/>
+          <include name="tearDown"/>
+          <include name="TestSortByFilter"/>
+          <include name="TestToggleByIndex"/>
+        </methods>
+      </class> <!-- tests.AllProductsTests -->
       <class name="tests.ActiveProductTest">
         <methods>
           <include name="setUp"/>
@@ -13,16 +22,26 @@
           <include name="testActionSection"/>
         </methods>
       </class> <!-- tests.ActiveProductTest -->
-      <class name="tests.AllProductsTests">
+    </classes>
+  </test> <!-- Product Management Tests(failed) -->
+  <test thread-count="5" name="Discount Management Tests(failed)">
+    <classes>
+      <class name="tests.OrderManagementTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="TestStatusFilter"/>
-          <include name="TestSortByFilter"/>
-          <include name="TestFilterProductsByCategory"/>
-          <include name="TestToggleByIndex"/>
+          <include name="OpenOrderManagmentpage"/>
+          <include name="OrderPage"/>
         </methods>
-      </class> <!-- tests.AllProductsTests -->
+      </class> <!-- tests.OrderManagementTest -->
+      <class name="tests.Dicountmanagement">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="validateAddNewDiscount_PositiveFlow"/>
+          <include name="setUpTest"/>
+        </methods>
+      </class> <!-- tests.Dicountmanagement -->
     </classes>
-  </test> <!-- Product Management Tests(failed) -->
+  </test> <!-- Discount Management Tests(failed) -->
 </suite> <!-- Failed suite [Actpal Suite] -->

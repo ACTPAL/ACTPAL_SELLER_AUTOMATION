@@ -81,7 +81,7 @@ public class AllProductsPage {
             try {
                 allProduct.click();
             } catch (ElementClickInterceptedException e) {
-                System.out.println("⚠️ Click intercepted — trying JavaScript click...");
+                Logger.log("⚠️ Click intercepted — trying JavaScript click...");
                 js.executeScript("arguments[0].click();", allProduct);
             }
 
@@ -177,9 +177,9 @@ public class AllProductsPage {
        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         try {
             wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(productStatusList));
-            System.out.println("✅ Filter applied successfully for: " + status);
+            Logger.log("✅ Filter applied successfully for: " + status);
         } catch (TimeoutException e) {
-            System.out.println("⚠️ No products found for filter: " + status);
+            Logger.log("⚠️ No products found for filter: " + status);
         }
     }
 
@@ -189,7 +189,7 @@ public class AllProductsPage {
         List<String> statuses = new ArrayList<>();
 
         if (statusElements.isEmpty()) {
-            System.out.println("⚠️ No product statuses found!");
+            Logger.log("⚠️ No product statuses found!");
             return statuses;
         }
 
@@ -203,7 +203,7 @@ public class AllProductsPage {
                     : ("1".equals(dataStatus) ? "Active" : "Deactive");
 
             statuses.add(finalStatus);
-            System.out.println("Product Status: " + finalStatus + " (data-status=" + dataStatus + ")");
+            Logger.log("Product Status: " + finalStatus + " (data-status=" + dataStatus + ")");
         }
 
         return statuses;
@@ -246,7 +246,7 @@ public class AllProductsPage {
         WebElement addInventoryActionBtn = driver.findElement(addInventoryActionBtn1);
         Assert.assertTrue(addInventoryActionBtn.isDisplayed(), "Add Inventory action button is not visible");
         
-        System.out.println("Add Inventory modal opened successfully and action button is visible.");
+        Logger.log("Add Inventory modal opened successfully and action button is visible.");
         driver.findElement(By.xpath("//i[@class='fa-regular fa-circle-xmark fa-lg']")).click();
     }
  // In AllProductsPage.java
@@ -261,7 +261,7 @@ public class AllProductsPage {
             ExpectedConditions.visibilityOfAllElementsLocatedBy(viewButtonsLocator)
         );
 
-        System.out.println("Total View buttons found: " + viewButtons.size());
+        Logger.log("Total View buttons found: " + viewButtons.size());
 
         if (viewButtons.isEmpty()) {
             throw new IllegalStateException("❌ No View buttons found on the page.");
@@ -279,7 +279,7 @@ public class AllProductsPage {
         js.executeScript("arguments[0].scrollIntoView({block: 'center'});", viewButton);
         js.executeScript("arguments[0].click();", viewButton);
 
-        System.out.println("🖱️ Clicked on View button at index: " + rowIndex);
+        Logger.log("🖱️ Clicked on View button at index: " + rowIndex);
 
         // Save current tab handle
         String originalWindow = driver.getWindowHandle();
@@ -293,7 +293,7 @@ public class AllProductsPage {
             }
         }
 
-        System.out.println("🔄 Switched to new tab.");
+        Logger.log("🔄 Switched to new tab.");
 
         // Wait for product details page
         wait.until(ExpectedConditions.urlContains("product_details"));
@@ -304,12 +304,12 @@ public class AllProductsPage {
             "❌ Expected URL to contain 'product_details', but found: " + currentUrl
         );
 
-        System.out.println("✅ Product Details page opened successfully in new tab: " + currentUrl);
+        Logger.log("✅ Product Details page opened successfully in new tab: " + currentUrl);
 
         // ✅ Close the new tab and switch back
         driver.close();
         driver.switchTo().window(originalWindow);
-        System.out.println("🔙 Closed member tab and returned to original tab.");
+        Logger.log("🔙 Closed member tab and returned to original tab.");
     }
 
 
@@ -327,7 +327,7 @@ public class AllProductsPage {
         List<WebElement> icons = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(editIconLocator));
 
         int totalIcons = icons.size();
-        System.out.println("🧭 Total Edit icons found: " + totalIcons);
+        Logger.log("🧭 Total Edit icons found: " + totalIcons);
 
         if (totalIcons == 0) {
             throw new IllegalStateException("❌ No Edit icons found on the All Products page!");
@@ -343,7 +343,7 @@ public class AllProductsPage {
         // Scroll and click
         js.executeScript("arguments[0].scrollIntoView({block: 'center'});", editBtn);
         js.executeScript("arguments[0].click();", editBtn);
-        System.out.println("🖱️ Clicked Edit icon at position: " + rowIndex);
+        Logger.log("🖱️ Clicked Edit icon at position: " + rowIndex);
 
         // ✅ Validate Edit Product page loaded
         try {
@@ -353,7 +353,7 @@ public class AllProductsPage {
                     By.xpath("//label[contains(normalize-space(),'Product Name')]")));
 
             if (heading.isDisplayed() && productNameLabel.isDisplayed()) {
-                System.out.println("✅ Edit Product page opened successfully.");
+                Logger.log("✅ Edit Product page opened successfully.");
             } else {
                 throw new AssertionError("❌ Edit Product page did not load correctly — expected elements not visible.");
             }
@@ -367,7 +367,7 @@ public class AllProductsPage {
 
     public void addNewProductBtnCheck() {
         driver.findElement(addnewProductBTN).click();
-        System.out.println("🖱️ Clicked 'Add New Product' button.");
+        Logger.log("🖱️ Clicked 'Add New Product' button.");
         closePopups(1);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
@@ -381,7 +381,7 @@ public class AllProductsPage {
             wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//label[contains(normalize-space(),'Product Name')]")));
 
-            System.out.println("✅ 'Create a New Product' page loaded successfully.");
+            Logger.log("✅ 'Create a New Product' page loaded successfully.");
 
         } catch (Exception e) {
             throw new AssertionError("❌ 'Create a New Product' page did not load correctly — expected elements not found.", e);
@@ -436,7 +436,7 @@ public class AllProductsPage {
         }
 
         if (!changed) {
-            System.out.println("Status did not change after confirming popup for index " + index);
+            Logger.log("Status did not change after confirming popup for index " + index);
             return false;
         }
 
@@ -445,7 +445,7 @@ public class AllProductsPage {
         String newText = updatedButton.getText().trim();
         String newStatus = updatedButton.getAttribute("data-status");
 
-        System.out.println("Old: " + oldText + " (" + oldStatus + ") -> New: " + newText + " (" + newStatus + ")");
+        Logger.log("Old: " + oldText + " (" + oldStatus + ") -> New: " + newText + " (" + newStatus + ")");
 
         if ("1".equals(oldStatus)) {
             return "0".equals(newStatus) && newText.equalsIgnoreCase("De-active");
@@ -476,19 +476,19 @@ public class AllProductsPage {
     public boolean verifyAllProductsBelongToCategory(String expectedCategory) {
         List<WebElement> productCategories = getAllProductCategoryTexts();
         if (productCategories.isEmpty()) {
-            System.out.println("⚠️ No products found for category: " + expectedCategory);
+            Logger.log("⚠️ No products found for category: " + expectedCategory);
             return false;
         }
 
         for (WebElement categoryText : productCategories) {
             String text = categoryText.getText().trim();
-            System.out.println("Product category text: " + text);
+            Logger.log("Product category text: " + text);
             if (!text.contains(expectedCategory)) {
-                System.out.println("❌ Found product without category '" + expectedCategory + "': " + text);
+                Logger.log("❌ Found product without category '" + expectedCategory + "': " + text);
                 return false;
             }
         }
-        System.out.println("✅ All products belong to category: " + expectedCategory);
+        Logger.log("✅ All products belong to category: " + expectedCategory);
         return true;
     }
 
@@ -517,7 +517,7 @@ public class AllProductsPage {
                 String pricePart = text.split("/")[0].replaceAll("[^0-9.]", "");
                 prices.add(Double.parseDouble(pricePart));
             } catch (org.openqa.selenium.StaleElementReferenceException se) {
-                System.out.println("⚠️ Stale element detected at index " + i + ", retrying...");
+                Logger.log("⚠️ Stale element detected at index " + i + ", retrying...");
                 WebElement e = driver.findElements(cells).get(i);
                 String text = e.getText();
                 String pricePart = text.split("/")[0].replaceAll("[^0-9.]", "");
@@ -544,7 +544,7 @@ public class AllProductsPage {
                     discounts.add(Double.parseDouble(discountPart));
                 }
             } catch (org.openqa.selenium.StaleElementReferenceException se) {
-                System.out.println("⚠️ Stale element detected at index " + i + ", retrying...");
+                Logger.log("⚠️ Stale element detected at index " + i + ", retrying...");
                 WebElement e = driver.findElements(cells).get(i);
                 String text = e.getText();
                 if (text.contains("/")) {

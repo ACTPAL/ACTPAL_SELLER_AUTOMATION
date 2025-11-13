@@ -95,10 +95,10 @@ public class OrderManagementTest extends BaseTest {
 	}
 	
 	@Test(priority = 5)
-  public void   cancleandReturn () throws InterruptedException {
-	  Logger.log("=== Starting Order Page Validation Test ===");
+	
+	public void cancleandReturn() throws InterruptedException {
+	    Logger.log("=== Starting Order Page Validation Test ===");
 
-	    // Login
 	    LoginPage loginPage = new LoginPage(driver);
 	    loginPage.enterEmail("jump2brand@gmail.com");
 	    loginPage.enterPassword("Test@123");
@@ -109,10 +109,16 @@ public class OrderManagementTest extends BaseTest {
 	    Assert.assertTrue(loginPage.getSuccessMessage().contains("Dashboard"),
 	            "❌ Login failed");
 
-	    // Open Order Page
 	    OrderManagementPage orderPage = new OrderManagementPage(driver);
 	    orderPage.CancleandReturn("Cancelled");
-  }
+
+	    // ✅ Now you can control how many rows to check
+	    int rowsToValidate = 50; // you can set 5, 10, 20, etc.
+	    orderPage.validateCancelReturnCalculations(rowsToValidate);
+	    orderPage.validateSearchResults("Leather");
+	    orderPage.validateResetToDefaultPage();
+	}
+
 
 
 	private void closePopups(int attempts) {

@@ -104,8 +104,8 @@ public class MediaTest extends BaseTest {
         Assert.assertFalse(date.isEmpty(), "❌ Media upload date is empty");
 
         Logger.pass("Media Name: " + name + ", Upload Date: " + date);
-        System.out.println("✅ Media Name: " + name);
-        System.out.println("✅ Upload Date: " + date);
+        Logger.log("✅ Media Name: " + name);
+        Logger.log("✅ Upload Date: " + date);
     }
 }
 

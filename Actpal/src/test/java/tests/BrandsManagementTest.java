@@ -126,7 +126,7 @@ public class BrandsManagementTest extends BaseTest {
             boolean result = brandsPage.verifyErrorMessagesCount();
 
             Assert.assertTrue(result, "❌ Expected 7 error messages, but count is different.");
-            System.out.println("✅ Test Passed: 7 error messages displayed correctly.");
+            Logger.log("✅ Test Passed: 7 error messages displayed correctly.");
         }
         
         @Test(priority=5)

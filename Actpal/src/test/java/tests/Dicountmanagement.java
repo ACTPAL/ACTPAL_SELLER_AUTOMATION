@@ -55,7 +55,7 @@ public class Dicountmanagement extends BaseTest {
         discountPage.SearchValidation("DJ Equipment");
         boolean resultFound = discountPage.isSearchResultPresent("DJ Equipment");
         Assert.assertTrue(resultFound, "❌ Discount not found in search results!");
-        System.out.println("✅ Discount successfully added and verified through search.");
+        Logger.log("✅ Discount successfully added and verified through search.");
 
         // 🔹 Step 3: Delete the discount
         discountPage.deleteDiscount("DJ Equipment");
@@ -66,12 +66,12 @@ public class Dicountmanagement extends BaseTest {
 
         // 🔹 Step 5: Validate deletion
         Assert.assertFalse(stillPresent, "❌ Discount still present after deletion!");
-        System.out.println("✅ Discount successfully deleted — not found in search.");
+        Logger.log("✅ Discount successfully deleted — not found in search.");
 
         // 🔹 Step 6: Optional — check for "No any discount added yet." message
         boolean messageDisplayed = discountPage.isNoDiscountMessageVisible();
         if (messageDisplayed) {
-            System.out.println("✅ 'No any discount added yet.' message displayed after deletion.");
+            Logger.log("✅ 'No any discount added yet.' message displayed after deletion.");
         }
     }
 
@@ -120,7 +120,7 @@ public class Dicountmanagement extends BaseTest {
         List<String> errors = discountPage.getAllErrorMessages();
 
         // ✅ Log count
-        System.out.println("✅ Total errors displayed: " + errors.size());
+        Logger.log("✅ Total errors displayed: " + errors.size());
 
         // ✅ Expect 4 validation errors
         Assert.assertEquals(errors.size(), 4, "Expected 4 validation errors but found " + errors.size());

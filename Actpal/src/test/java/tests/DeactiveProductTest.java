@@ -170,9 +170,9 @@ public class DeactiveProductTest  extends BaseTest {
 	         boolean allActive = activeStatuses.stream().allMatch(s -> s.equalsIgnoreCase("Active"));
 	         Assert.assertTrue(allActive, "❌ Some products are NOT Active after applying 'Active' filter!");
 	         Logger.log("✅ Verified all products are Active. Count: " + activeCount);
-	         System.out.println("Total Active Products: " + activeCount);
+	         Logger.log("Total Active Products: " + activeCount);
 	     } else {
-	         System.out.println("⚠️ No Active products found.");
+	         Logger.log("⚠️ No Active products found.");
 	     }
 
 	     page.applyStatusFilter("De-active");
@@ -189,9 +189,9 @@ public class DeactiveProductTest  extends BaseTest {
 	                 .allMatch(s -> s.equalsIgnoreCase("De-active") || s.equalsIgnoreCase("Deactive"));
 	         Assert.assertTrue(allDeactive, "❌ Some products are NOT De-active after applying 'De-active' filter!");
 	         Logger.log("✅ Verified all products are De-active. Count: " + deactiveCount);
-	         System.out.println("Total De-active Products: " + deactiveCount);
+	         Logger.log("Total De-active Products: " + deactiveCount);
 	     } else {
-	         System.out.println("⚠️ No De-active products found.");
+	         Logger.log("⚠️ No De-active products found.");
 	     }
 
 	     Logger.log("✅ Status filter test completed successfully!");
@@ -289,7 +289,7 @@ public class DeactiveProductTest  extends BaseTest {
 	     int indexToClick = 2;
 	     boolean result = page.toggleStatusByIndex(indexToClick);
 	     Assert.assertTrue(result, "❌ Toggle failed for row: " + indexToClick);
-	     System.out.println("✅ Toggle successful for row " + indexToClick);
+	     Logger.log("✅ Toggle successful for row " + indexToClick);
 	 }
 
 	 @Test(priority = 12)

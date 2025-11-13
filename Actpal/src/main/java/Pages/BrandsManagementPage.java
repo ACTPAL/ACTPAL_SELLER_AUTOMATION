@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import base.Logger;
+
 public class BrandsManagementPage {
 	
 	
@@ -76,7 +78,7 @@ public class BrandsManagementPage {
 	    		        ExpectedConditions.visibilityOfElementLocated(BrandManagemntpageTitle)
 	    		    );
 	    		    Assert.assertTrue(pageTitle.isDisplayed(), "❌ Brand Management Page Title not visible — page may not have loaded.");
-	    		    System.out.println("✅ Brand Management Page opened successfully!");
+	    		    Logger.log("✅ Brand Management Page opened successfully!");
 	    		
 	    	   
 	}
@@ -93,7 +95,7 @@ public class BrandsManagementPage {
 
 	           if (!noResult.isEmpty()) {
 	               Assert.assertTrue(noResult.get(0).isDisplayed(), "❌ 'No brand added yet' message missing.");
-	               System.out.println("⚠️ No results found for: " + brandName);
+	               Logger.log("⚠️ No results found for: " + brandName);
 	           } else {
 	               List<WebElement> results = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(BrandNames));
 	               Assert.assertTrue(results.size() > 0, "❌ No brand results displayed.");
@@ -103,9 +105,9 @@ public class BrandsManagementPage {
 	                   String text = brand.getText().trim().toLowerCase();
 	                   if (!text.contains(brandName.toLowerCase())) {
 	                       allMatch = false;
-	                       System.out.println("❌ Mismatch: " + text);
+	                       Logger.log("❌ Mismatch: " + text);
 	                   } else {
-	                       System.out.println("✅ Found: " + text);
+	                       Logger.log("✅ Found: " + text);
 	                   }
 	               }
 	               Assert.assertTrue(allMatch, "❌ Some results didn’t match: " + brandName);
@@ -124,32 +126,32 @@ public class BrandsManagementPage {
 	               // Try normal click
 	               try {
 	                   wait.until(ExpectedConditions.elementToBeClickable(resetButton)).click();
-	                   System.out.println("✅ Reset button clicked normally.");
+	                   Logger.log("✅ Reset button clicked normally.");
 	               } catch (ElementClickInterceptedException e) {
-	                   System.out.println("⚠️ Normal click failed, using JavaScript click.");
+	                   Logger.log("⚠️ Normal click failed, using JavaScript click.");
 	                   ((JavascriptExecutor) driver).executeScript("arguments[0].click();", resetButton);
 	               }
 
 	               // Wait for brand list to appear after reset
 	               wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(BrandNames));
 	               List<WebElement> spans = driver.findElements(BrandNames);
-	               System.out.println("✅ Total brands listed after reset: " + spans.size());
+	               Logger.log("✅ Total brands listed after reset: " + spans.size());
 
 	               // Print all brand names with index
 	               for (int i = 0; i < spans.size(); i++) {
-	                   System.out.println("Index " + i + ": " + spans.get(i).getText());
+	                   Logger.log("Index " + i + ": " + spans.get(i).getText());
 	               }
 
 	               // Example click: index 1
 	               if (spans.size() > 1) {
 	                   spans.get(1).click();
-	                   System.out.println("✅ Clicked brand at index 1 successfully.");
+	                   Logger.log("✅ Clicked brand at index 1 successfully.");
 	               } else {
-	                   System.out.println("⚠️ Not enough elements to click index 1.");
+	                   Logger.log("⚠️ Not enough elements to click index 1.");
 	               }
 
 	           } catch (Exception e) {
-	               System.out.println("❌ Error while checking Reset button: " + e.getMessage());
+	               Logger.log("❌ Error while checking Reset button: " + e.getMessage());
 	               e.printStackTrace();
 	           }
 	  
@@ -167,14 +169,14 @@ public class BrandsManagementPage {
 	    	        // ✅ Try normal click first
 	    	        try {
 	    	            addButton.click();
-	    	            System.out.println("✅ Add New Discount button clicked normally.");
+	    	            Logger.log("✅ Add New Discount button clicked normally.");
 	    	        } catch (ElementClickInterceptedException e) {
-	    	            System.out.println("⚠️ Normal click failed, using JavaScript click.");
+	    	            Logger.log("⚠️ Normal click failed, using JavaScript click.");
 	    	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", addButton);
 	    	        }
 
 	    	    } catch (Exception e) {
-	    	        System.out.println("❌ Error while clicking Add New Discount button: " + e.getMessage());
+	    	        Logger.log("❌ Error while clicking Add New Discount button: " + e.getMessage());
 	    	        e.printStackTrace();
 	    	    }
 	    	    
@@ -190,13 +192,13 @@ public class BrandsManagementPage {
 	    	WebElement countryDropdown = wait.until(ExpectedConditions.elementToBeClickable(CuntryDrp));
 	    	Select sc = new Select(countryDropdown);
 	    	sc.selectByVisibleText(Country);
-	    	System.out.println("✅ Country selected: " + Country);
+	    	Logger.log("✅ Country selected: " + Country);
 
 	    	// 🔹 Step 2: Select State (wait till enabled)
 	    	WebElement stateDropdown = wait.until(ExpectedConditions.elementToBeClickable(stateDrp));
 	    	Select sc1 = new Select(stateDropdown);
 	    	sc1.selectByVisibleText(State);
-	    	System.out.println("✅ State selected: " + State);
+	    	Logger.log("✅ State selected: " + State);
 
 	    	// 🔹 Step 3: Wait for City dropdown to become enabled and populated
 	    	WebElement cityDropdown = driver.findElement(CityDrp);
@@ -212,7 +214,7 @@ public class BrandsManagementPage {
 
 	    	Select sc2 = new Select(cityDropdown);
 	    	sc2.selectByVisibleText(City);
-	    	System.out.println("✅ City selected: " + City);
+	    	Logger.log("✅ City selected: " + City);
 	    	
 	    	driver.findElement(ZipCode).sendKeys(zipCode);
 	    	
@@ -227,7 +229,7 @@ public class BrandsManagementPage {
 ;
 	  
 
-	    	System.out.println("✅ Brand logo uploaded successfully!");
+	    	Logger.log("✅ Brand logo uploaded successfully!");
 	    	driver.findElement(AddBTN).click();
 	    	
 	  
@@ -246,10 +248,10 @@ public class BrandsManagementPage {
 	    	                ExpectedConditions.visibilityOfElementLocated(DuplicateBrandtext)
 	    	        );
 
-	    	        System.out.println("✅ Duplicate brand — no delete needed.");
+	    	        Logger.log("✅ Duplicate brand — no delete needed.");
 	    	        return;  // ✅ STOP here
 	    	    } catch (Exception e) {
-	    	        System.out.println("ℹ️ No duplicate. Checking success popup...");
+	    	        Logger.log("ℹ️ No duplicate. Checking success popup...");
 	    	    }
 
 	    	    // ✅ success popup
@@ -259,7 +261,7 @@ public class BrandsManagementPage {
 	    	    // ✅ delete ONLY AFTER SUCCESS
 	    	    delteBrand(brandName);
 
-	    	    System.out.println("✅ Brand added and deleted successfully.");
+	    	    Logger.log("✅ Brand added and deleted successfully.");
 	    	}
 
 	       
@@ -277,14 +279,14 @@ public class BrandsManagementPage {
 	    	        // ✅ Try normal click first
 	    	        try {
 	    	            addButton.click();
-	    	            System.out.println("✅ Add New Discount button clicked normally.");
+	    	            Logger.log("✅ Add New Discount button clicked normally.");
 	    	        } catch (ElementClickInterceptedException e) {
-	    	            System.out.println("⚠️ Normal click failed, using JavaScript click.");
+	    	            Logger.log("⚠️ Normal click failed, using JavaScript click.");
 	    	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", addButton);
 	    	        }
 
 	    	    } catch (Exception e) {
-	    	        System.out.println("❌ Error while clicking Add New Discount button: " + e.getMessage());
+	    	        Logger.log("❌ Error while clicking Add New Discount button: " + e.getMessage());
 	    	        e.printStackTrace();
 	    	    }
 
@@ -298,11 +300,11 @@ public class BrandsManagementPage {
 	    	    // ✅ Step 4: Get all error elements
 	    	    List<WebElement> errors = driver.findElements(errorMessages);
 
-	    	    System.out.println("----- Error Messages Found -----");
+	    	    Logger.log("----- Error Messages Found -----");
 	    	    for (WebElement e : errors) {
 	    	        String msg = e.getText().trim();
 	    	        if (!msg.isEmpty()) {
-	    	            System.out.println(msg);
+	    	            Logger.log(msg);
 	    	        }
 	    	    }
 
@@ -310,7 +312,7 @@ public class BrandsManagementPage {
 	    	                       .filter(e -> !e.getText().trim().isEmpty())
 	    	                       .count();
 
-	    	    System.out.println("Total visible error messages: " + count);
+	    	    Logger.log("Total visible error messages: " + count);
 	    	    return count == 7;
 	    	}
 	       
@@ -368,7 +370,7 @@ public class BrandsManagementPage {
 	    	        // ✅ 2. Wait for the delete icon of the FIRST row
 	    	        WebElement deleteBtn = wait.until(ExpectedConditions.elementToBeClickable(deleteIcon));
 	    	        deleteBtn.click();
-	    	        System.out.println("✅ Delete button clicked.");
+	    	        Logger.log("✅ Delete button clicked.");
 
 	    	        // ✅ 3. Wait for confirmation popup
 	    	        WebElement popupDeleteBtn = wait.until(
@@ -377,7 +379,7 @@ public class BrandsManagementPage {
 
 	    	        // ✅ 4. Click delete inside popup
 	    	        popupDeleteBtn.click();
-	    	        System.out.println("✅ Delete confirmed from popup.");
+	    	        Logger.log("✅ Delete confirmed from popup.");
 
 	    	        // ✅ 5. Optional: Validate row is deleted
 	    	        Thread.sleep(1000);
@@ -387,13 +389,13 @@ public class BrandsManagementPage {
 
 	    	        List<WebElement> rows = driver.findElements(By.xpath("//table//tr"));
 	    	        if (rows.size() <= 1) {
-	    	            System.out.println("✅ Brand deleted successfully: " + brandName);
+	    	            Logger.log("✅ Brand deleted successfully: " + brandName);
 	    	        } else {
-	    	            System.out.println("⚠️ Brand still appears in list. Check manually.");
+	    	            Logger.log("⚠️ Brand still appears in list. Check manually.");
 	    	        }
 
 	    	    } catch (Exception e) {
-	    	        System.out.println("❌ Error while deleting brand: " + e.getMessage());
+	    	        Logger.log("❌ Error while deleting brand: " + e.getMessage());
 	    	        e.printStackTrace();
 	    	    }
 	    	}
@@ -423,7 +425,7 @@ public class BrandsManagementPage {
 
 	    	    // ✅ 2. Fetch OLD name
 	    	    String oldName = companyNamesBefore.get(index).getText().trim();
-	    	    System.out.println("OLD Company Name at index " + index + ": " + oldName);
+	    	    Logger.log("OLD Company Name at index " + index + ": " + oldName);
 
 	    	    // ✅ 3. Click edit button for same index
 	    	    WebElement editBtn = wait.until(
@@ -451,10 +453,10 @@ public class BrandsManagementPage {
 	    	        ));
 
 	    	        closePopup.click();
-	    	        System.out.println("✅ Popup closed successfully");
+	    	        Logger.log("✅ Popup closed successfully");
 
 	    	    } catch (Exception e) {
-	    	        System.out.println("⚠ No popup appeared after Add button");
+	    	        Logger.log("⚠ No popup appeared after Add button");
 	    	    }
 
 	    	    // ✅ Wait for UI refresh
@@ -469,14 +471,14 @@ public class BrandsManagementPage {
 
 	    	    // ✅ 8. Fetch UPDATED name
 	    	    String updatedName = companyNamesAfter.get(index).getText().trim();
-	    	    System.out.println("NEW Company Name at index " + index + ": " + updatedName);
+	    	    Logger.log("NEW Company Name at index " + index + ": " + updatedName);
 
 	    	    // ✅ 9. Validate
 	    	    if (updatedName.equals(oldName)) {
-	    	        System.out.println("❌ FAILED: Company name NOT changed!");
+	    	        Logger.log("❌ FAILED: Company name NOT changed!");
 	    	        Assert.fail("Company name did NOT change. Old: " + oldName + " | New: " + updatedName);
 	    	    } else {
-	    	        System.out.println("✅ SUCCESS: Company name updated successfully → " + updatedName);
+	    	        Logger.log("✅ SUCCESS: Company name updated successfully → " + updatedName);
 	    	    }
 	    	}
 

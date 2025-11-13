@@ -3,6 +3,9 @@ package Pages;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import base.Logger;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -304,9 +307,9 @@ driver.findElement(saveInventoryBtn).click();
              WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
              By popupCloseBtn = By.xpath("//button[@class='btn-close' and @data-bs-dismiss='modal']");
              wait.until(ExpectedConditions.elementToBeClickable(popupCloseBtn)).click();
-             System.out.println("Popup closed successfully. Attempt " + (i + 1));
+             Logger.log("Popup closed successfully. Attempt " + (i + 1));
          } catch (Exception e) {
-             System.out.println("No popup appeared in attempt " + (i + 1));
+             Logger.log("No popup appeared in attempt " + (i + 1));
          }
      }
  
@@ -337,7 +340,7 @@ driver.findElement(saveInventoryBtn).click();
 	    WebElement productNameMsgElement = wait.until(ExpectedConditions.visibilityOfElementLocated(productNameError));
 	    js.executeScript("arguments[0].scrollIntoView({behavior:'auto', block:'center'});", productNameMsgElement);
 	    Assert.assertEquals(productNameMsgElement.getText(), "Please enter product name");
-	    System.out.println("✅ Product Name mandatory validation passed");
+	    Logger.log("✅ Product Name mandatory validation passed");
 
 	    // --- 2️⃣ Brand blank ---
 	    enterBasicDetails(
@@ -359,7 +362,7 @@ driver.findElement(saveInventoryBtn).click();
 	    js.executeScript("arguments[0].scrollIntoView({behavior:'auto', block:'center'});", brandMsgElement);
 	    String brandMsg = brandMsgElement.getText();
 	    Assert.assertEquals(brandMsg, "Please select the brand");
-	    System.out.println("✅ Brand mandatory validation passed: " + brandMsg);
+	    Logger.log("✅ Brand mandatory validation passed: " + brandMsg);
 
 
 	    // --- 3️⃣ Category blank ---
@@ -383,7 +386,7 @@ driver.findElement(saveInventoryBtn).click();
 	    js.executeScript("arguments[0].scrollIntoView({behavior:'auto', block:'center'});", categoryMsgElement);
 	    String categoryMsg = categoryMsgElement.getText();
 	    Assert.assertEquals(categoryMsg, "Please select the category");
-	    System.out.println("✅ Category mandatory validation passed: " + categoryMsg);
+	    Logger.log("✅ Category mandatory validation passed: " + categoryMsg);
 
 
 
@@ -408,7 +411,7 @@ driver.findElement(saveInventoryBtn).click();
 	    WebElement productTypeMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(productTypeError));
 	    js.executeScript("arguments[0].scrollIntoView({behavior:'auto', block:'center'});", productTypeMsg);
 	    Assert.assertEquals(productTypeMsg.getText(), "Please select the product type");
-	    System.out.println("✅ Product Type mandatory validation passed");
+	    Logger.log("✅ Product Type mandatory validation passed");
 
 	    // --- 6️⃣ Used Type blank ---
 	  
@@ -429,9 +432,9 @@ driver.findElement(saveInventoryBtn).click();
 	    js.executeScript("arguments[0].scrollIntoView({behavior:'auto', block:'center'});", summaryMsgElement);
 	    String summaryMsg = summaryMsgElement.getText();
 	    Assert.assertEquals(summaryMsg, "Please enter short summary");
-	    System.out.println("✅ Short Summary mandatory validation passed: " + summaryMsg);
+	    Logger.log("✅ Short Summary mandatory validation passed: " + summaryMsg);
 
-	    System.out.println("✅ All Basic Details mandatory validations passed successfully!");
+	    Logger.log("✅ All Basic Details mandatory validations passed successfully!");
 
 	    // You can continue the same pattern for remaining dropdowns/fields.
 	}
@@ -444,7 +447,7 @@ driver.findElement(saveInventoryBtn).click();
      WebElement categoryDropdown1 = wait.until(ExpectedConditions.elementToBeClickable(categoryDropdown));
      Select categorySelect = new Select(categoryDropdown1);
      categorySelect.selectByVisibleText(category);
-     System.out.println("✅ Category selected: " + category);
+     Logger.log("✅ Category selected: " + category);
 
      // --- Step 2: Wait for Sub-category dropdown to refresh ---
      Thread.sleep(2000);
@@ -465,8 +468,8 @@ driver.findElement(saveInventoryBtn).click();
              "❌ Expected sub-category '" + expectedSubCategory + "' not found for category '" + category + "'. Found: " + subCategoryTexts);
 
      js.executeScript("arguments[0].scrollIntoView({behavior:'smooth', block:'center'});", subCategoryDropdown1);
-     System.out.println("✅ Verified: Selecting '" + category + "' auto-populates sub-category with '" + expectedSubCategory + "'");
-     System.out.println("✅ Available Sub-categories: " + subCategoryTexts);
+     Logger.log("✅ Verified: Selecting '" + category + "' auto-populates sub-category with '" + expectedSubCategory + "'");
+     Logger.log("✅ Available Sub-categories: " + subCategoryTexts);
  }
   
 

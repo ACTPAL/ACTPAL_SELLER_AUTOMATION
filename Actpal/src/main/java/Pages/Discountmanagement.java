@@ -77,17 +77,17 @@ public class Discountmanagement {
             WebElement headingElement = quickWait.until(ExpectedConditions.visibilityOfElementLocated(heading));
 
             Assert.assertTrue(headingElement.isDisplayed(), "Discount Management page not visible!");
-            System.out.println("✅ Discount Management page opened successfully.");
+            Logger.log("✅ Discount Management page opened successfully.");
 
             // ✅ Close popups *after* the page opens
             closePopups(1);
-            System.out.println("✅ Closed popups after Discount Management page loaded.");
+            Logger.log("✅ Closed popups after Discount Management page loaded.");
 
             // ✅ Force scroll back to the absolute top — stable and fast
             forceScrollToTop();
 
         } catch (TimeoutException e) {
-            System.out.println("⚠️ Discount Management button or heading not found quickly — retrying once...");
+            Logger.log("⚠️ Discount Management button or heading not found quickly — retrying once...");
             driver.navigate().refresh();
 
             WebElement discountBtn = new WebDriverWait(driver, Duration.ofSeconds(5))
@@ -99,12 +99,12 @@ public class Discountmanagement {
             Assert.assertTrue(headingElement.isDisplayed(), "Discount Management page still not visible!");
 
             closePopups(1);
-            System.out.println("✅ Discount Management page loaded after retry and popups closed.");
+            Logger.log("✅ Discount Management page loaded after retry and popups closed.");
 
             // ✅ Ensure top position again
             forceScrollToTop();
         } catch (Exception e) {
-            System.out.println("❌ Error opening Discount Management page: " + e.getMessage());
+            Logger.log("❌ Error opening Discount Management page: " + e.getMessage());
         }
     }
 
@@ -155,12 +155,12 @@ public class Discountmanagement {
             );
 
             if (finalY != null && finalY == 0L)
-                System.out.println("⬆️ Page scrolled to top successfully (stable).");
+                Logger.log("⬆️ Page scrolled to top successfully (stable).");
             else
-                System.out.println("⚠️ Page not perfectly at top, scrollY=" + finalY);
+                Logger.log("⚠️ Page not perfectly at top, scrollY=" + finalY);
 
         } catch (Exception e) {
-            System.out.println("⚠️ Exception while forcing top: " + e.getMessage());
+            Logger.log("⚠️ Exception while forcing top: " + e.getMessage());
         }
     }
     
@@ -183,14 +183,14 @@ public class Discountmanagement {
 
         // Select option
         new Select(dropdownEl).selectByVisibleText(optionText);
-        System.out.println("✅ Dropdown option selected: " + optionText);
+        Logger.log("✅ Dropdown option selected: " + optionText);
 
         // Locator for termination-date <span> elements (adjust XPath if needed)
         By dateLocator = By.xpath("//span[normalize-space(text()) and contains(text(), '2025')]");
 
         // Wait until at least one date appears (safe first checkpoint)
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(dateLocator, 0));
-        System.out.println("ℹ️ At least one termination date found, waiting for list to stabilize...");
+        Logger.log("ℹ️ At least one termination date found, waiting for list to stabilize...");
 
         // --- Poll until the number of date elements stabilizes (no change across N polls) ---
         int prevCount = -1;
@@ -219,7 +219,7 @@ public class Discountmanagement {
 
         List<WebElement> rawElements = driver.findElements(dateLocator);
         int foundCount = rawElements.size();
-        System.out.println("ℹ️ Stabilized element count: " + foundCount);
+        Logger.log("ℹ️ Stabilized element count: " + foundCount);
 
         // Parse the top N dates (you used up to 5 before)
         List<LocalDate> terminationDates = new ArrayList<>();
@@ -231,15 +231,15 @@ public class Discountmanagement {
             try {
                 LocalDate date = LocalDate.parse(text, formatter);
                 terminationDates.add(date);
-                System.out.println("Termination Date " + i + ": " + text);
+                Logger.log("Termination Date " + i + ": " + text);
             } catch (Exception ex) {
-                System.out.println("⚠️ Skipping unparsable date text: '" + text + "'");
+                Logger.log("⚠️ Skipping unparsable date text: '" + text + "'");
             }
         }
 
         // If one or zero dates found — don't assert sort; just log and return
         if (terminationDates.size() <= 1) {
-            System.out.println("ℹ️ Only " + terminationDates.size() + " termination date(s) found — skipping sorting validation.");
+            Logger.log("ℹ️ Only " + terminationDates.size() + " termination date(s) found — skipping sorting validation.");
             return;
         }
 
@@ -253,7 +253,7 @@ public class Discountmanagement {
         }
 
         Assert.assertTrue(sorted, "❌ Termination dates are not sorted correctly after applying filter!");
-        System.out.println("✅ Termination dates sorted correctly after applying filter.");
+        Logger.log("✅ Termination dates sorted correctly after applying filter.");
     }
     
 
@@ -269,7 +269,7 @@ public class Discountmanagement {
     public void checkCategory(String categoryName) {
         WebElement dropdownEl = wait.until(ExpectedConditions.elementToBeClickable(caetogry));
         new Select(dropdownEl).selectByVisibleText(categoryName);
-        System.out.println("✅ Selected category: " + categoryName);
+        Logger.log("✅ Selected category: " + categoryName);
     }
 
     public void SearchValidation(String searchText) {
@@ -278,21 +278,21 @@ public class Discountmanagement {
         searchInput.clear();
         searchInput.sendKeys(searchText);
         driver.findElement(Searchicon).click();
-        System.out.println("✅ Search performed for text: " + searchText);
+        Logger.log("✅ Search performed for text: " + searchText);
     }
 
     public void openDiscountHistoryAndVerify() {
         wait.until(ExpectedConditions.elementToBeClickable(discounthistoryBtn)).click();
         WebElement historyPageHeader = wait.until(ExpectedConditions.visibilityOfElementLocated(discountHistorypage));
         Assert.assertTrue(historyPageHeader.isDisplayed(), "Discount History page not visible!");
-        System.out.println("✅ Discount History page opened.");
+        Logger.log("✅ Discount History page opened.");
     }
 
     public void backButtoncheckflow() {
         driver.findElement(BackBtn).click();
         WebElement headingElement = wait.until(ExpectedConditions.visibilityOfElementLocated(heading));
         Assert.assertTrue(headingElement.isDisplayed(), "Discount Management page is not displayed!");
-        System.out.println("✅ Back button working fine.");
+        Logger.log("✅ Back button working fine.");
     }
 
     // ---------- UI Cleanup Helpers ----------
@@ -303,7 +303,7 @@ public class Discountmanagement {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].style.display='none';", modal);
             }
         } catch (Exception e) {
-            System.out.println("No modals found.");
+            Logger.log("No modals found.");
         }
     }
 
@@ -314,7 +314,7 @@ public class Discountmanagement {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].style.display='none';", iframe);
             }
         } catch (Exception e) {
-            System.out.println("No overlays found.");
+            Logger.log("No overlays found.");
         }
     }
 
@@ -420,14 +420,14 @@ public List<String> getAllErrorMessages() {
         }
 
         // ✅ Log each error in console
-        System.out.println("🔴 Found " + texts.size() + " error messages:");
+        Logger.log("🔴 Found " + texts.size() + " error messages:");
         for (String t : texts) {
-            System.out.println("   → " + t);
+            Logger.log("   → " + t);
         }
 
         return texts;
     } catch (TimeoutException e) {
-        System.out.println("⚠️ No error messages appeared!");
+        Logger.log("⚠️ No error messages appeared!");
         return Collections.emptyList();
     }
 }
@@ -458,7 +458,7 @@ public void deleteDiscount(String productName) {
 
             deleteBtn.click();
             found = true;
-            System.out.println("🗑️ Clicked delete icon for: " + productName);
+            Logger.log("🗑️ Clicked delete icon for: " + productName);
             break;
         }
     }
@@ -470,20 +470,20 @@ public void deleteDiscount(String productName) {
     try {
         WebElement confirmBtn = wait.until(ExpectedConditions.elementToBeClickable(confirmDeleteBtn));
         confirmBtn.click();
-        System.out.println("✅ Clicked on delete confirmation button.");
+        Logger.log("✅ Clicked on delete confirmation button.");
     } catch (Exception e) {
-        System.out.println("⚠️ Delete confirmation button not found or already handled.");
+        Logger.log("⚠️ Delete confirmation button not found or already handled.");
     }
 
     try {
         WebElement toast = wait.until(ExpectedConditions.visibilityOfElementLocated(successToast));
-        System.out.println("✅ Delete success toast appeared: " + toast.getText());
+        Logger.log("✅ Delete success toast appeared: " + toast.getText());
     } catch (Exception e) {
         try {
             WebElement msg = wait.until(ExpectedConditions.visibilityOfElementLocated(noDiscountMsg));
-            System.out.println("✅ Delete successful — message displayed: " + msg.getText());
+            Logger.log("✅ Delete successful — message displayed: " + msg.getText());
         } catch (Exception ex) {
-            System.out.println("⚠️ No success toast or 'No discount' message found after delete.");
+            Logger.log("⚠️ No success toast or 'No discount' message found after delete.");
         }
     }
 }
@@ -507,13 +507,13 @@ public boolean isNoDiscountMessageVisible() {
 public void selectCategory(String category) {
   Select select = new Select(wait.until(ExpectedConditions.elementToBeClickable(CategoryDrpD)));
   select.selectByVisibleText(category);
-  System.out.println("📂 Selected Category: " + category);
+  Logger.log("📂 Selected Category: " + category);
 }
 
 public void selectSubCategory(String subCategory) {
   Select select = new Select(wait.until(ExpectedConditions.elementToBeClickable(SubCatogryDrpd)));
   select.selectByVisibleText(subCategory);
-  System.out.println("📁 Selected SubCategory: " + subCategory);
+  Logger.log("📁 Selected SubCategory: " + subCategory);
 }
 
 //✅ Get all options of dropdown
@@ -535,7 +535,7 @@ public String getSelectedOption(By locator) {
 public boolean isDefaultDropdownState(String expectedSub, String expectedType) {
   String sub = getSelectedOption(SubCatogryDrpd);
   String type = getSelectedOption(ProductType);
-  System.out.println("🔍 Current defaults → SubCategory: " + sub + ", ProductType: " + type);
+  Logger.log("🔍 Current defaults → SubCategory: " + sub + ", ProductType: " + type);
   return sub.equals(expectedSub) && type.equals(expectedType);
 }
 public By getSubCatogryDrpd() {

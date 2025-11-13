@@ -31,6 +31,8 @@
             <class name="tests.Dicountmanagement"/>
             <class name="tests.BrandsManagementTest"/>
             <class name="tests.OrderManagementTest"/>
+            <class name="tests.FollowersListTest"/>
+            
         </classes>
     </test>
 

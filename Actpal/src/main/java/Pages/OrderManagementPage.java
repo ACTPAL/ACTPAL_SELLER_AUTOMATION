@@ -3,8 +3,10 @@ package Pages;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,6 +16,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import base.Logger;
 
 public class OrderManagementPage {
 	 private WebDriver driver;
@@ -62,6 +66,14 @@ public class OrderManagementPage {
      private  By  totalAmount = By.xpath("//td[@class=\"text-center\" and .//span[contains(text(),\"Total Amount\")]]");
      private By Deduction = By.xpath("//td[@class=\"text-center\" and .//span[contains(text(),\"Deduction\")]]");
      private  By  Amount = By.xpath("//td[.//span[contains(text(),\"Status & Action\")]]");
+     private By Searchreturn = By.xpath("//input[@class='form-control keywords']");
+     private By searchiconreturn = By.xpath("//i[@class='fa fa-search']");
+     private By productNames = By.xpath("//a[contains(@href,'/shop/product_details')]");
+     
+     private  By  returnResretBTN = By.xpath("//span[@class=\"mob-m-hide\"]");
+       
+     
+     
     
 	 
 	 
@@ -84,24 +96,22 @@ public class OrderManagementPage {
 		    WebElement orderMgmt = wait.until(ExpectedConditions.elementToBeClickable(orderManagmentBTN));
 
 		    // ✅ Scroll into view
-		    ((JavascriptExecutor) driver).executeScript(
-		            "arguments[0].scrollIntoView({block: 'center'});", orderMgmt
-		    );
+		    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", orderMgmt);
 		    Thread.sleep(400);
 
 		    // ✅ Click Order Management (open dropdown)
 		    try {
 		        orderMgmt.click();
-		        System.out.println("✅ Order Management clicked.");
+		        Logger.log("✅ Order Management clicked.");
 		    } catch (Exception e) {
 		        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", orderMgmt);
-		        System.out.println("⚠️ JS clicked Order Management.");
+		        Logger.log("⚠️ JS clicked Order Management.");
 		    }
 
 		    // ✅ Now click All Orders (dropdown menu)
 		    WebElement allOrders = wait.until(ExpectedConditions.elementToBeClickable(AllorderBtn));
 		    allOrders.click();
-		    System.out.println("✅ All Orders clicked.");
+		    Logger.log("✅ All Orders clicked.");
 
 		    // ✅ Validate page title
 		    WebElement pageTitle = wait.until(
@@ -109,7 +119,7 @@ public class OrderManagementPage {
 		    );
 
 		    Assert.assertTrue(pageTitle.isDisplayed(), "❌ Orders List page not opened!");
-		    System.out.println("✅ Orders List Page opened successfully!");
+		    Logger.log("✅ Orders List Page opened successfully!");
 		}
 	 
 	 public void checkOrderStatusFilter(String expectedStatus) {
@@ -125,12 +135,12 @@ public class OrderManagementPage {
 		        wait.until(ExpectedConditions.invisibilityOfElementLocated(
 		                By.xpath("//*[contains(@class,'loader')]")));
 		    } catch (Exception e) {
-		        System.out.println("⚠ Loader not found, continuing...");
+		        Logger.log("⚠ Loader not found, continuing...");
 		    }
 
 		    // ✅ If empty data message appears
 		    if (driver.findElements(By.xpath("//h5[contains(text(),'Real-time feedback')]")).size() > 0) {
-		        System.out.println("✅ No orders found for status: " + expectedStatus);
+		        Logger.log("✅ No orders found for status: " + expectedStatus);
 		        return;
 		    }
 
@@ -165,7 +175,7 @@ public class OrderManagementPage {
 		        );
 		    }
 
-		    System.out.println("✅ Successfully validated: " + expectedStatus);
+		    Logger.log("✅ Successfully validated: " + expectedStatus);
 		}
 
 	 
@@ -196,7 +206,7 @@ public class OrderManagementPage {
 		        Assert.assertTrue(true, 
 		                "✅ No results found — message displayed correctly for keyword: " + searchKeyword);
 
-		        System.out.println("✅ No results found for keyword: " + searchKeyword);
+		        Logger.log("✅ No results found for keyword: " + searchKeyword);
 		        return; 
 		    }
 
@@ -212,7 +222,7 @@ public class OrderManagementPage {
 		    for (WebElement result : results) {
 
 		        String name = result.getText().trim();
-		        System.out.println("Row: " + name);
+		        Logger.log("Row: " + name);
 
 		        Assert.assertTrue(
 		                name.toLowerCase().contains(searchKeyword.toLowerCase()),
@@ -220,7 +230,7 @@ public class OrderManagementPage {
 		        );
 		    }
 
-		    System.out.println("✅ All results contain keyword: " + searchKeyword);
+		    Logger.log("✅ All results contain keyword: " + searchKeyword);
 		}
 	 
 public  void ResetButton () {
@@ -260,7 +270,7 @@ public  void ResetButton () {
                 try {
                     price = Double.parseDouble(priceText);
                 } catch (Exception e) {
-                    System.out.println("⚠ Unable to parse price for: " + statusText);
+                    Logger.log("⚠ Unable to parse price for: " + statusText);
                 }
 
                 if (price > 0 && statusToDropdown.containsKey(baseStatus)) {
@@ -270,11 +280,11 @@ public  void ResetButton () {
                     statusData.put("price", price);
                     statusDataList.add(statusData);
                 } else {
-                    System.out.println("⚠ Price is zero or no dropdown mapping for: " + statusText);
+                    Logger.log("⚠ Price is zero or no dropdown mapping for: " + statusText);
                 }
 
             } catch (Exception e) {
-                System.out.println("⚠ Failed to process status item: " + e.getMessage());
+                Logger.log("⚠ Failed to process status item: " + e.getMessage());
             }
         }
 
@@ -284,7 +294,7 @@ public  void ResetButton () {
             String statusText = (String) statusData.get("statusText");
             double expectedPrice = (double) statusData.get("price");
 
-            System.out.println("✅ Applying dropdown filter for: " + statusText + " --> Price: " + expectedPrice);
+            Logger.log("✅ Applying dropdown filter for: " + statusText + " --> Price: " + expectedPrice);
 
             try {
                 Select sc = new Select(driver.findElement(orderstatusDropdwn));
@@ -294,7 +304,7 @@ public  void ResetButton () {
                 try {
                     wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[contains(@class,'loader')]")));
                 } catch (Exception e) {
-                    System.out.println("⚠ Loader not found, continuing...");
+                    Logger.log("⚠ Loader not found, continuing...");
                 }
 
                 // Step 3: Extract all table prices
@@ -308,7 +318,7 @@ public  void ResetButton () {
                     try {
                         sum += Double.parseDouble(text);
                     } catch (Exception e) {
-                        System.out.println("⚠ Failed to parse table price: " + text);
+                        Logger.log("⚠ Failed to parse table price: " + text);
                     }
                 }
 
@@ -317,20 +327,20 @@ public  void ResetButton () {
                 double roundedExpected = Math.round(expectedPrice * 100.0) / 100.0;
 
                 if (roundedSum == roundedExpected) {
-                    System.out.println("✅ Sum validation passed for: " + statusText + " --> Sum: " + roundedSum);
+                    Logger.log("✅ Sum validation passed for: " + statusText + " --> Sum: " + roundedSum);
                 } else {
-                    System.out.println("⚠ Sum mismatch for: " + statusText +
+                    Logger.log("⚠ Sum mismatch for: " + statusText +
                             " --> Expected: " + roundedExpected + " | Actual sum: " + roundedSum +
                             " (ignored due to rounding differences)");
                    
                 }
 
             } catch (Exception e) {
-                System.out.println("⚠ Failed to apply dropdown for: " + dropdownText + " - " + e.getMessage());
+                Logger.log("⚠ Failed to apply dropdown for: " + dropdownText + " - " + e.getMessage());
             }
         }
 
-        System.out.println("✅ All non-zero statuses filtered and validated successfully.");
+        Logger.log("✅ All non-zero statuses filtered and validated successfully.");
     }
     
     
@@ -361,11 +371,11 @@ public  void ResetButton () {
                                     + expectedTotal + " but calculated " + sum);
 
                 // Log success
-                System.out.println("✅ Row " + (i + 1) + " validation passed: " +
+                Logger.log("✅ Row " + (i + 1) + " validation passed: " +
                         price + " + " + tax + " + " + shipping + " = " + expectedTotal);
 
             } catch (Exception e) {
-                System.out.println("⚠ Failed to process row " + (i + 1) + ": " + e.getMessage());
+                Logger.log("⚠ Failed to process row " + (i + 1) + ": " + e.getMessage());
                 Assert.fail("Exception in row " + (i + 1) + ": " + e.getMessage());
             }
         }
@@ -381,18 +391,18 @@ public  void ResetButton () {
 
         for (int i = 0; i <6; i++) {
 
-            System.out.println("\n=========================================");
-            System.out.println("🔵 STARTING ORDER " + (i + 1) + " VALIDATION");
-            System.out.println("=========================================");
-            System.out.println("1️⃣ ORDER DETAILS");
-            System.out.println("2️⃣ ROW CALCULATIONS");
-            System.out.println("3️⃣ GRAND TOTAL\n");
+            Logger.log("\n=========================================");
+            Logger.log("🔵 STARTING ORDER " + (i + 1) + " VALIDATION");
+            Logger.log("=========================================");
+            Logger.log("1️⃣ ORDER DETAILS");
+            Logger.log("2️⃣ ROW CALCULATIONS");
+            Logger.log("3️⃣ GRAND TOTAL\n");
 
             validateOrderDetailsByIndex(i);
 
-            System.out.println("\n✅ ORDER " + (i + 1) + " COMPLETED");
-            System.out.println("-----------------------------------------");
-            System.out.println("➡ Moving to next order...\n");
+            Logger.log("\n✅ ORDER " + (i + 1) + " COMPLETED");
+            Logger.log("-----------------------------------------");
+            Logger.log("➡ Moving to next order...\n");
         }
     }
 
@@ -405,7 +415,7 @@ public  void ResetButton () {
         List<WebElement> orderDates = driver.findElements(OrderDate);
 
         if (orderRows.isEmpty()) {
-            System.out.println("❌ No orders found!");
+            Logger.log("❌ No orders found!");
             return;
         }
 
@@ -432,7 +442,7 @@ public  void ResetButton () {
         String actualStatus = (statusElements.isEmpty()) ? "N/A" : statusElements.get(0).getText().trim();
 
         if (!actualStatus.equals(expectedStatus)) {
-            System.out.println("⚠️ Order Status mismatch! Expected: " + expectedStatus + " | Actual: " + actualStatus);
+            Logger.log("⚠️ Order Status mismatch! Expected: " + expectedStatus + " | Actual: " + actualStatus);
         }
 
         String actualDate = driver.findElement(
@@ -440,17 +450,17 @@ public  void ResetButton () {
         ).getText().trim();
         actualDate = actualDate.replace(",", ""); // ✅ Fix
 
-        System.out.println("===== DETAILS PAGE =====");
-        System.out.println("Order ID: " + actualOrderId);
-        System.out.println("Status: " + actualStatus);
-        System.out.println("Date: " + actualDate);
+        Logger.log("===== DETAILS PAGE =====");
+        Logger.log("Order ID: " + actualOrderId);
+        Logger.log("Status: " + actualStatus);
+        Logger.log("Date: " + actualDate);
 
         // ✅ ASSERTION for Order ID and Date only
         Assert.assertEquals(actualOrderId, expectedOrderId, "Order ID mismatch!");
         Assert.assertEquals(actualDate, expectedDate, "Order Date mismatch!");
 
         // ✅ Always run product validation
-        System.out.println("\nSTARTING PRODUCT CALCULATION VALIDATION");
+        Logger.log("\nSTARTING PRODUCT CALCULATION VALIDATION");
         validateOrderProductCalculations();
 
         GOback();
@@ -464,11 +474,11 @@ public  void ResetButton () {
         List<WebElement> rows = driver.findElements(By.xpath("//tr[contains(@class,'mob-border-top-0')]"));
 
         if (rows.isEmpty()) {
-            System.out.println("❌ No product rows found!");
+            Logger.log("❌ No product rows found!");
             return;
         }
 
-        System.out.println("\n===== VALIDATING PRODUCT ROW CALCULATIONS =====");
+        Logger.log("\n===== VALIDATING PRODUCT ROW CALCULATIONS =====");
 
         int rowNum = 1;
         double grandTotal = 0.0;
@@ -487,12 +497,12 @@ public  void ResetButton () {
 
                 double expectedRowTotal = Math.round((finalPrice + tax) * 100.0) / 100.0;
 
-                System.out.println("\nRow " + rowNum);
-                System.out.println("Final Price (after discount): " + finalPrice);
-                System.out.println("Tax: " + tax);
-                System.out.println("Shipping: " + shipping);
-                System.out.println("Expected Row Total (Price + Tax): " + expectedRowTotal);
-                System.out.println("Actual Row Total (UI): " + uiRowTotal);
+                Logger.log("\nRow " + rowNum);
+                Logger.log("Final Price (after discount): " + finalPrice);
+                Logger.log("Tax: " + tax);
+                Logger.log("Shipping: " + shipping);
+                Logger.log("Expected Row Total (Price + Tax): " + expectedRowTotal);
+                Logger.log("Actual Row Total (UI): " + uiRowTotal);
 
                 // ✅ ASSERTION for row total (2 decimal precision)
                 Assert.assertEquals(Math.round(uiRowTotal * 100.0) / 100.0,
@@ -503,7 +513,7 @@ public  void ResetButton () {
                 grandTotal += (finalPrice + tax + shipping);
 
             } catch (Exception e) {
-                System.out.println("❌ ERROR in row " + rowNum + ": " + e.getMessage());
+                Logger.log("❌ ERROR in row " + rowNum + ": " + e.getMessage());
             }
 
             rowNum++;
@@ -518,16 +528,16 @@ public  void ResetButton () {
         ));
         double uiGrandTotal = parseAmountValueSafe(grandTotalElement.getText());
 
-        System.out.println("\n===== VALIDATING GRAND TOTAL =====");
-        System.out.println("Expected Grand Total (sum of Price + Tax + Shipping): " + grandTotal);
-        System.out.println("Actual Grand Total (UI): " + uiGrandTotal);
+        Logger.log("\n===== VALIDATING GRAND TOTAL =====");
+        Logger.log("Expected Grand Total (sum of Price + Tax + Shipping): " + grandTotal);
+        Logger.log("Actual Grand Total (UI): " + uiGrandTotal);
 
         // ✅ ASSERTION for Grand Total (2 decimal precision)
         Assert.assertEquals(Math.round(uiGrandTotal * 100.0) / 100.0,
                             grandTotal,
                             "Grand Total mismatch!");
 
-        System.out.println("===== VALIDATION COMPLETE =====\n");
+        Logger.log("===== VALIDATION COMPLETE =====\n");
     }
 
     private double parseAmountValueSafe(String text) {
@@ -541,7 +551,13 @@ public  void ResetButton () {
     public void GOback() {
         driver.findElement(GoBack).click();
     }
-
+    
+    
+	/* Product Return Request */
+	/*
+	 * ________ _ _
+	 * ______________________________________________________________________________________________________________________________________________________________________________________________
+	 */
     
     public void CancleandReturn(String RequestDrp) throws InterruptedException {
         WebElement orderMgmt = wait.until(ExpectedConditions.elementToBeClickable(orderManagmentBTN));
@@ -555,16 +571,16 @@ public  void ResetButton () {
         // ✅ Click Order Management (open dropdown)
         try {
             orderMgmt.click();
-            System.out.println("✅ Order Management clicked.");
+            Logger.log("✅ Order Management clicked.");
         } catch (Exception e) {
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", orderMgmt);
-            System.out.println("⚠️ JS clicked Order Management.");
+            Logger.log("⚠️ JS clicked Order Management.");
         }
 
         // ✅ Now click All Orders (dropdown menu)
         WebElement allOrders = wait.until(ExpectedConditions.elementToBeClickable(Cancleandreturn));
         allOrders.click();
-        System.out.println("✅ Cancle return Orders clicked.");
+        Logger.log("✅ Cancle return Orders clicked.");
 
         // ✅ Validate page title
         WebElement pageTitle = wait.until(
@@ -572,12 +588,12 @@ public  void ResetButton () {
         );
 
         Assert.assertTrue(pageTitle.isDisplayed(), "❌ Product Return Request page not opened!");
-        System.out.println("✅ Product Return Request Page opened successfully!");
+        Logger.log("✅ Product Return Request Page opened successfully!");
 
         // ✅ Select dropdown value
         Select sc = new Select(driver.findElement(RequestTypeDRP));
         sc.selectByVisibleText(RequestDrp);
-        System.out.println("✅ Request Type Selected: " + RequestDrp);
+        Logger.log("✅ Request Type Selected: " + RequestDrp);
 
         // ------------------- Validation Code Starts Here -------------------
         // ✅ Wait for table to refresh (adjust time or use explicit wait if needed)
@@ -590,7 +606,7 @@ public  void ResetButton () {
         for (WebElement orderRow : orderRows) {
             // Get combined text of all statuses in the row
             String fullStatus = orderRow.getText().replaceAll("[()]", "").trim();
-            System.out.println("Order Combined Status: " + fullStatus);
+            Logger.log("Order Combined Status: " + fullStatus);
 
             // Assert that it contains the filtered request type
             Assert.assertTrue(
@@ -600,15 +616,150 @@ public  void ResetButton () {
         }
 
 
-        System.out.println("✅ All displayed orders match the Request Type: " + RequestDrp);
+        Logger.log("✅ All displayed orders match the Request Type: " + RequestDrp);
         // ------------------- Validation Code Ends Here -------------------
     }
 
-    
-    
-public  void  CalculationValaition () {
-	
-}
+    public void validateCancelReturnCalculations(int rowsToValidate) {
+        List<WebElement> rows = driver.findElements(By.xpath("//table//tr[td]"));
+        Logger.log("===== 🧮 Starting Calculation Validation for First " + rowsToValidate + " Cancel & Return Orders =====");
+        Logger.log("Total Rows Found: " + rows.size());
 
-	 
+        int limit = Math.min(rowsToValidate, rows.size());
+        Logger.log("Validating only first " + limit + " rows...");
+
+        for (int i = 0; i < limit; i++) {
+            WebElement row = rows.get(i);
+            try {
+                double sold = extractAmount(row, ".//td[3]");
+                double tax = extractAmount(row, ".//td[4]");
+                double shipping = extractAmount(row, ".//td[5]");
+                double total = extractAmount(row, ".//td[6]");
+                double deduction = extractAmount(row, ".//td[7]");
+                double amount = extractAmount(row, ".//td[8]");
+
+                double expectedTotal = roundToTwoDecimals(sold + tax + shipping);
+                double expectedAmount = roundToTwoDecimals(total - deduction);
+
+                Logger.log(String.format(
+                    "Row %d → Sold: %.2f | Tax: %.2f | Shipping: %.2f | Total: %.2f | Deduction: %.2f | Amount: %.2f",
+                    (i + 1), sold, tax, shipping, total, deduction, amount));
+
+                Assert.assertEquals(total, expectedTotal,
+                        String.format("❌ Row %d → Total mismatch: Expected %.2f but found %.2f",
+                                (i + 1), expectedTotal, total));
+
+                Assert.assertEquals(amount, expectedAmount,
+                        String.format("❌ Row %d → Amount mismatch: Expected %.2f but found %.2f",
+                                (i + 1), expectedAmount, amount));
+
+            } catch (Exception e) {
+                Logger.log("⚠️ Row " + (i + 1) + " → Error parsing values: " + e.getMessage());
+            }
+        }
+
+        Logger.log("✅ First " + limit + " order rows validated successfully!");
+    }
+
+    private double extractAmount(WebElement row, String cellXPath) {
+        try {
+            String text = row.findElement(By.xpath(cellXPath)).getText().replace("$", "").replace(",", "").trim();
+            if (text.isEmpty()) return 0.0;
+            return Double.parseDouble(text);
+        } catch (Exception e) {
+            return 0.0;
+        }
+    }
+
+    private double roundToTwoDecimals(double value) {
+        return Math.round(value * 100.0) / 100.0;
+    }
+    public void validateSearchResults(String keyword) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+            // Step 1: Enter search keyword
+            WebElement searchInput = wait.until(ExpectedConditions.elementToBeClickable(Searchreturn));
+            searchInput.clear();
+            searchInput.sendKeys(keyword);
+
+            // Step 2: Click search icon
+            driver.findElement(searchiconreturn).click();
+            Logger.log("🔍 Searching for keyword: " + keyword);
+
+            // Step 3: Wait for products to appear
+            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(productNames));
+            Thread.sleep(2000);
+
+            // Step 4: Collect visible, unique product names
+            List<WebElement> allProducts = driver.findElements(productNames);
+            Set<String> visibleNames = new LinkedHashSet<>();
+
+            for (WebElement product : allProducts) {
+                if (product.isDisplayed()) {
+                    String name = product.getText().trim();
+                    if (!name.isEmpty()) {
+                        visibleNames.add(name); // avoids duplicates
+                    }
+                }
+            }
+
+            // Step 5: Validate results
+            Assert.assertTrue(visibleNames.size() > 0, "No visible products found for keyword: " + keyword);
+            Logger.log("✅ Visible unique products found: " + visibleNames.size());
+
+            boolean allMatch = true;
+            for (String name : visibleNames) {
+                Logger.log("🛒 Product found: " + name);
+                if (!name.toLowerCase().contains(keyword.toLowerCase())) {
+                    allMatch = false;
+                    Logger.fail("❌ Product '" + name + "' does NOT contain keyword: " + keyword);
+                } else {
+                    Logger.pass("✅ Product '" + name + "' matches keyword: " + keyword);
+                }
+            }
+
+            Assert.assertTrue(allMatch, "Some visible products did not match the keyword: " + keyword);
+            Logger.pass("🎯 All visible, unique products matched the keyword successfully.");
+
+        } catch (Exception e) {
+            Logger.fail("❌ Error during search validation: " + e.getMessage());
+            Assert.fail("Search validation failed: " + e.getMessage());
+        }
+    }
+
+    public void validateResetToDefaultPage() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        try {
+            // Step 1: Click Reset Button
+            WebElement resetBtn = wait.until(ExpectedConditions.elementToBeClickable(returnResretBTN));
+            resetBtn.click();
+            Logger.log("🔄 Clicked on Reset button to go back to default page.");
+
+            // Step 2: Wait until search bar is cleared (if it resets keyword field)
+            wait.until(ExpectedConditions.textToBePresentInElementValue(Searchreturn, ""));
+            Logger.log("✅ Search bar cleared after reset.");
+
+            // Step 3: Wait for default product list to load
+            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(productNames));
+            Thread.sleep(2000);
+
+            List<WebElement> defaultProducts = driver.findElements(productNames);
+            int productCount = defaultProducts.size();
+            Logger.log("📋 Default product count after reset: " + productCount);
+
+            // Step 4: Validation - Default list should not be empty
+            Assert.assertTrue(productCount > 0, "❌ Default product list is empty after reset.");
+            Logger.pass("✅ Reset button successfully navigated back to the default product list.");
+
+        } catch (Exception e) {
+            Logger.fail("❌ Error while validating Reset button: " + e.getMessage());
+            Assert.fail("Reset validation failed: " + e.getMessage());
+        }
+    }
+
+    
+
+    
 }
