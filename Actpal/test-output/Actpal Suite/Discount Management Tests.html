@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Discount Management Tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>14/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>14/4/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Nov 12 18:11:55 IST 2025</td>
+<td>Started on:</td><td>Thu Nov 13 14:48:47 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>292 seconds (292607 ms)</td>
+<tr><td>Total time:</td><td>401 seconds (401400 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,112 +76,92 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.OrderManagementTest.OpenOrderManagmentpage()'><b>OpenOrderManagmentpage</b><br>Test class: tests.OrderManagementTest</td>
-<td><div><pre>java.lang.AssertionError: 
-❌ Status mismatch!
-Expected: Payment Failed
-Found Class: activebtn packed
-Found Text: packed expected [true] but found [false]
-	at Pages.OrderManagementPage.checkOrderStatusFilter(OrderManagementPage.java:170)
-	at tests.OrderManagementTest.OpenOrderManagmentpage(OrderManagementTest.java:34)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1430226189", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1430226189'><pre>java.lang.AssertionError: 
-❌ Status mismatch!
-Expected: Payment Failed
-Found Class: activebtn packed
-Found Text: packed expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at Pages.OrderManagementPage.checkOrderStatusFilter(OrderManagementPage.java:170)
-	at tests.OrderManagementTest.OpenOrderManagmentpage(OrderManagementTest.java:34)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>24</td>
-<td>tests.OrderManagementTest@7a3793c7</td></tr>
-<tr>
-<td title='tests.OrderManagementTest.OrderPage()'><b>OrderPage</b><br>Test class: tests.OrderManagementTest</td>
-<td><div><pre>java.lang.AssertionError: Row 1 total mismatch! expected [11.64] but found [46.56]
-	at Pages.OrderManagementPage.validateOrderProductCalculations(OrderManagementPage.java:508)
-	at Pages.OrderManagementPage.validateOrderDetailsByIndex(OrderManagementPage.java:464)
-	at Pages.OrderManagementPage.validateTopFiveOrders(OrderManagementPage.java:401)
-	at tests.OrderManagementTest.OrderPage(OrderManagementTest.java:92)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1954091312", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1954091312'><pre>java.lang.AssertionError: Row 1 total mismatch! expected [11.64] but found [46.56]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEquals(Assert.java:728)
-	at Pages.OrderManagementPage.validateOrderProductCalculations(OrderManagementPage.java:508)
-	at Pages.OrderManagementPage.validateOrderDetailsByIndex(OrderManagementPage.java:464)
-	at Pages.OrderManagementPage.validateTopFiveOrders(OrderManagementPage.java:401)
-	at tests.OrderManagementTest.OrderPage(OrderManagementTest.java:92)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>15</td>
-<td>tests.OrderManagementTest@7a3793c7</td></tr>
-<tr>
-<td title='tests.Dicountmanagement.validateAddNewDiscount_PositiveFlow()'><b>validateAddNewDiscount_PositiveFlow</b><br>Test class: tests.Dicountmanagement</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;mob-m-hide&quot;&gt;...&lt;/span&gt; is not clickable at point (1714, 181). Other element would receive the click: &lt;div role=&quot;dialog&quot; aria-modal=&quot;true&quot; class=&quot;fade modal modal show&quot; tabindex=&quot;-1&quot; style=&quot;display: block;&quot;&gt;...&lt;/div&gt;
-  (Session info: MicrosoftEdge=142.0.3595.69)
+<td title='tests.Dicountmanagement.validateNoSelection_ShowsError()'><b>validateNoSelection_ShowsError</b><br>Test class: tests.Dicountmanagement</td>
+<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: MicrosoftEdge=142.0.3595.76)
 Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [c826eee00828d087e59e6982cbcdf795, clickElement {id=f.793D5CAF34462F6B665162F63536A774.d.18ED59639746C35F0E43DDE472831E8E.e.2564}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.69, fedcm:accounts: true, goog:processID: 23248, ms:edgeOptions: {debuggerAddress: localhost:56089}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56089/devtoo..., se:cdpVersion: 142.0.3595.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: MicrosoftEdge on windows (c826eee00828d087e59e6982cbcdf795)] -&gt; xpath: //span[@class=&apos;mob-m-hide&apos;]]
-Session ID: c826eee00828d087e59e6982cbcdf795
+Command: [1e58d682227878737781aa8bda5946e0, clickElement {id=f.361E7403CC7C0DED7A2FC40CEFF1190E.d.1E2DECDEDFAB7771BE32C025F6E1AC29.e.2954}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.76, fedcm:accounts: true, goog:processID: 20420, ms:edgeOptions: {debuggerAddress: localhost:54529}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54529/devtoo..., se:cdpVersion: 142.0.3595.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (1e58d682227878737781aa8bda5946e0)] -&gt; xpath: //span[normalize-space()=&apos;Add New Discount&apos;]]
+Session ID: 1e58d682227878737781aa8bda5946e0
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Pages.Discountmanagement.openAddDiscountForm(Discountmanagement.java:395)
+	at tests.Dicountmanagement.validateNoSelection_ShowsError(Dicountmanagement.java:117)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1159248524", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1159248524'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: MicrosoftEdge=142.0.3595.76)
+Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [1e58d682227878737781aa8bda5946e0, clickElement {id=f.361E7403CC7C0DED7A2FC40CEFF1190E.d.1E2DECDEDFAB7771BE32C025F6E1AC29.e.2954}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.76, fedcm:accounts: true, goog:processID: 20420, ms:edgeOptions: {debuggerAddress: localhost:54529}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54529/devtoo..., se:cdpVersion: 142.0.3595.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (1e58d682227878737781aa8bda5946e0)] -&gt; xpath: //span[normalize-space()=&apos;Add New Discount&apos;]]
+Session ID: 1e58d682227878737781aa8bda5946e0
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Pages.Discountmanagement.openAddDiscountForm(Discountmanagement.java:395)
+	at tests.Dicountmanagement.validateNoSelection_ShowsError(Dicountmanagement.java:117)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>10</td>
+<td>tests.Dicountmanagement@5f0fd5a0</td></tr>
+<tr>
+<td title='tests.Dicountmanagement.validateAddNewDiscount_PositiveFlow()'><b>validateAddNewDiscount_PositiveFlow</b><br>Test class: tests.Dicountmanagement</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;mob-m-hide&quot;&gt;...&lt;/span&gt; is not clickable at point (1714, 103). Other element would receive the click: &lt;div role=&quot;dialog&quot; aria-modal=&quot;true&quot; class=&quot;fade modal modal show&quot; tabindex=&quot;-1&quot; style=&quot;display: block;&quot;&gt;...&lt;/div&gt;
+  (Session info: MicrosoftEdge=142.0.3595.76)
+Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [b3b90eff56e8d8b12cd7e986bd840601, clickElement {id=f.DF20C1D15C41F66DABD19E9AD05774AB.d.D058AE6CF18716051019A254B41A8A46.e.2670}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.76, fedcm:accounts: true, goog:processID: 13192, ms:edgeOptions: {debuggerAddress: localhost:50072}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50072/devtoo..., se:cdpVersion: 142.0.3595.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (b3b90eff56e8d8b12cd7e986bd840601)] -&gt; xpath: //span[@class=&apos;mob-m-hide&apos;]]
+Session ID: b3b90eff56e8d8b12cd7e986bd840601
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
@@ -194,16 +174,16 @@ Session ID: c826eee00828d087e59e6982cbcdf795
 	at Pages.Discountmanagement.SearchValidation(Discountmanagement.java:276)
 	at tests.Dicountmanagement.validateAddNewDiscount_PositiveFlow(Dicountmanagement.java:55)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace268893785", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace268893785'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;mob-m-hide&quot;&gt;...&lt;/span&gt; is not clickable at point (1714, 181). Other element would receive the click: &lt;div role=&quot;dialog&quot; aria-modal=&quot;true&quot; class=&quot;fade modal modal show&quot; tabindex=&quot;-1&quot; style=&quot;display: block;&quot;&gt;...&lt;/div&gt;
-  (Session info: MicrosoftEdge=142.0.3595.69)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1808169739", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1808169739'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;mob-m-hide&quot;&gt;...&lt;/span&gt; is not clickable at point (1714, 103). Other element would receive the click: &lt;div role=&quot;dialog&quot; aria-modal=&quot;true&quot; class=&quot;fade modal modal show&quot; tabindex=&quot;-1&quot; style=&quot;display: block;&quot;&gt;...&lt;/div&gt;
+  (Session info: MicrosoftEdge=142.0.3595.76)
 Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [c826eee00828d087e59e6982cbcdf795, clickElement {id=f.793D5CAF34462F6B665162F63536A774.d.18ED59639746C35F0E43DDE472831E8E.e.2564}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.69, fedcm:accounts: true, goog:processID: 23248, ms:edgeOptions: {debuggerAddress: localhost:56089}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56089/devtoo..., se:cdpVersion: 142.0.3595.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: MicrosoftEdge on windows (c826eee00828d087e59e6982cbcdf795)] -&gt; xpath: //span[@class=&apos;mob-m-hide&apos;]]
-Session ID: c826eee00828d087e59e6982cbcdf795
+Command: [b3b90eff56e8d8b12cd7e986bd840601, clickElement {id=f.DF20C1D15C41F66DABD19E9AD05774AB.d.D058AE6CF18716051019A254B41A8A46.e.2670}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.76, fedcm:accounts: true, goog:processID: 13192, ms:edgeOptions: {debuggerAddress: localhost:50072}, msedge: {msedgedriverVersion: 142.0.3595.53 (e9d637e9672e..., userDataDir: C:\Users\INSOF_~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50072/devtoo..., se:cdpVersion: 142.0.3595.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (b3b90eff56e8d8b12cd7e986bd840601)] -&gt; xpath: //span[@class=&apos;mob-m-hide&apos;]]
+Session ID: b3b90eff56e8d8b12cd7e986bd840601
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -245,8 +225,94 @@ Session ID: c826eee00828d087e59e6982cbcdf795
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>3</td>
-<td>tests.Dicountmanagement@4f4c4b1a</td></tr>
+<td>6</td>
+<td>tests.Dicountmanagement@5f0fd5a0</td></tr>
+<tr>
+<td title='tests.FollowersListTest.OpenFollowerListpage()'><b>OpenFollowerListpage</b><br>Test class: tests.FollowersListTest</td>
+<td><div><pre>java.lang.AssertionError: 2nd Delete icon not found before attempting deletion.
+	at Pages.FollowersListPage.DeleteValidation(FollowersListPage.java:224)
+	at tests.FollowersListTest.OpenFollowerListpage(FollowersListTest.java:29)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1620381515", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1620381515'><pre>java.lang.AssertionError: 2nd Delete icon not found before attempting deletion.
+	at org.testng.Assert.fail(Assert.java:111)
+	at Pages.FollowersListPage.DeleteValidation(FollowersListPage.java:224)
+	at tests.FollowersListTest.OpenFollowerListpage(FollowersListTest.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>13</td>
+<td>tests.FollowersListTest@4dd6fd0a</td></tr>
+<tr>
+<td title='tests.OrderManagementTest.OrderPage()'><b>OrderPage</b><br>Test class: tests.OrderManagementTest</td>
+<td><div><pre>java.lang.AssertionError: Row 1 total mismatch! expected [11.64] but found [46.56]
+	at Pages.OrderManagementPage.validateOrderProductCalculations(OrderManagementPage.java:508)
+	at Pages.OrderManagementPage.validateOrderDetailsByIndex(OrderManagementPage.java:464)
+	at Pages.OrderManagementPage.validateTopFiveOrders(OrderManagementPage.java:401)
+	at tests.OrderManagementTest.OrderPage(OrderManagementTest.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1982440182", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1982440182'><pre>java.lang.AssertionError: Row 1 total mismatch! expected [11.64] but found [46.56]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEquals(Assert.java:728)
+	at Pages.OrderManagementPage.validateOrderProductCalculations(OrderManagementPage.java:508)
+	at Pages.OrderManagementPage.validateOrderDetailsByIndex(OrderManagementPage.java:464)
+	at Pages.OrderManagementPage.validateTopFiveOrders(OrderManagementPage.java:401)
+	at tests.OrderManagementTest.OrderPage(OrderManagementTest.java:92)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>23</td>
+<td>tests.OrderManagementTest@651aed93</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -257,75 +323,75 @@ Session ID: c826eee00828d087e59e6982cbcdf795
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.BrandsManagementTest.verifyErrorCountTest()'><b>verifyErrorCountTest</b><br>Test class: tests.BrandsManagementTest</td>
+<td title='tests.BrandsManagementTest.resetButtonFlow()'><b>resetButtonFlow</b><br>Test class: tests.BrandsManagementTest</td>
 <td></td>
-<td>5</td>
-<td>tests.BrandsManagementTest@1b266842</td></tr>
-<tr>
-<td title='tests.FollowersListTest.OpenFollowerListpage()'><b>OpenFollowerListpage</b><br>Test class: tests.FollowersListTest</td>
-<td></td>
-<td>19</td>
-<td>tests.FollowersListTest@42b3b079</td></tr>
-<tr>
-<td title='tests.OrderManagementTest.ValidatePriceTaxShippingTotals()'><b>ValidatePriceTaxShippingTotals</b><br>Test class: tests.OrderManagementTest</td>
-<td></td>
-<td>4</td>
-<td>tests.OrderManagementTest@7a3793c7</td></tr>
-<tr>
-<td title='tests.BrandsManagementTest.checkFullFlowOfBrandManagement()'><b>checkFullFlowOfBrandManagement</b><br>Test class: tests.BrandsManagementTest</td>
-<td></td>
-<td>14</td>
-<td>tests.BrandsManagementTest@1b266842</td></tr>
-<tr>
-<td title='tests.BrandsManagementTest.EdirActionButtonFlow()'><b>EdirActionButtonFlow</b><br>Test class: tests.BrandsManagementTest</td>
-<td></td>
-<td>7</td>
-<td>tests.BrandsManagementTest@1b266842</td></tr>
+<td>18</td>
+<td>tests.BrandsManagementTest@42b3b079</td></tr>
 <tr>
 <td title='tests.BrandsManagementTest.AddnewBrandFullflow()'><b>AddnewBrandFullflow</b><br>Test class: tests.BrandsManagementTest</td>
 <td></td>
-<td>29</td>
-<td>tests.BrandsManagementTest@1b266842</td></tr>
+<td>39</td>
+<td>tests.BrandsManagementTest@42b3b079</td></tr>
 <tr>
-<td title='tests.Dicountmanagement.verifyDiscountHistoryAndBackButton()'><b>verifyDiscountHistoryAndBackButton</b><br>Test class: tests.Dicountmanagement</td>
+<td title='tests.OrderManagementTest.cancleandReturn()'><b>cancleandReturn</b><br>Test class: tests.OrderManagementTest</td>
 <td></td>
-<td>7</td>
-<td>tests.Dicountmanagement@4f4c4b1a</td></tr>
+<td>26</td>
+<td>tests.OrderManagementTest@651aed93</td></tr>
 <tr>
-<td title='tests.OrderManagementTest.CalculationlogicforAllOrderValidation()'><b>CalculationlogicforAllOrderValidation</b><br>Test class: tests.OrderManagementTest</td>
+<td title='tests.BrandsManagementTest.checkFullFlowOfBrandManagement()'><b>checkFullFlowOfBrandManagement</b><br>Test class: tests.BrandsManagementTest</td>
 <td></td>
-<td>38</td>
-<td>tests.OrderManagementTest@7a3793c7</td></tr>
+<td>16</td>
+<td>tests.BrandsManagementTest@42b3b079</td></tr>
 <tr>
-<td title='tests.Dicountmanagement.verifyStatusDropdownSorting()'><b>verifyStatusDropdownSorting</b><br>Test class: tests.Dicountmanagement</td>
+<td title='tests.Dicountmanagement.verifyCategorySubcategoryDependency()'><b>verifyCategorySubcategoryDependency</b><br>Test class: tests.Dicountmanagement<br>Test method: Verify Dropdown Dependency Flow: Category → SubCategory → ProductType</td>
 <td></td>
-<td>40</td>
-<td>tests.Dicountmanagement@4f4c4b1a</td></tr>
+<td>2</td>
+<td>tests.Dicountmanagement@5f0fd5a0</td></tr>
+<tr>
+<td title='tests.OrderManagementTest.ValidatePriceTaxShippingTotals()'><b>ValidatePriceTaxShippingTotals</b><br>Test class: tests.OrderManagementTest</td>
+<td></td>
+<td>6</td>
+<td>tests.OrderManagementTest@651aed93</td></tr>
+<tr>
+<td title='tests.BrandsManagementTest.verifyErrorCountTest()'><b>verifyErrorCountTest</b><br>Test class: tests.BrandsManagementTest</td>
+<td></td>
+<td>10</td>
+<td>tests.BrandsManagementTest@42b3b079</td></tr>
 <tr>
 <td title='tests.Dicountmanagement.verifySearchAndCategoryFilter()'><b>verifySearchAndCategoryFilter</b><br>Test class: tests.Dicountmanagement</td>
 <td></td>
 <td>0</td>
-<td>tests.Dicountmanagement@4f4c4b1a</td></tr>
+<td>tests.Dicountmanagement@5f0fd5a0</td></tr>
 <tr>
-<td title='tests.Dicountmanagement.verifyCategorySubcategoryDependency()'><b>verifyCategorySubcategoryDependency</b><br>Test class: tests.Dicountmanagement<br>Test method: Verify Dropdown Dependency Flow: Category → SubCategory → ProductType</td>
+<td title='tests.TargetSettingTest.OpenTargetOpenPage()'><b>OpenTargetOpenPage</b><br>Test class: tests.TargetSettingTest</td>
 <td></td>
-<td>1</td>
-<td>tests.Dicountmanagement@4f4c4b1a</td></tr>
+<td>19</td>
+<td>tests.TargetSettingTest@bb9e6dc</td></tr>
 <tr>
-<td title='tests.OrderManagementTest.cancleandReturn()'><b>cancleandReturn</b><br>Test class: tests.OrderManagementTest</td>
+<td title='tests.OrderManagementTest.CalculationlogicforAllOrderValidation()'><b>CalculationlogicforAllOrderValidation</b><br>Test class: tests.OrderManagementTest</td>
 <td></td>
-<td>20</td>
-<td>tests.OrderManagementTest@7a3793c7</td></tr>
+<td>53</td>
+<td>tests.OrderManagementTest@651aed93</td></tr>
 <tr>
-<td title='tests.BrandsManagementTest.resetButtonFlow()'><b>resetButtonFlow</b><br>Test class: tests.BrandsManagementTest</td>
+<td title='tests.Dicountmanagement.verifyDiscountHistoryAndBackButton()'><b>verifyDiscountHistoryAndBackButton</b><br>Test class: tests.Dicountmanagement</td>
 <td></td>
-<td>15</td>
-<td>tests.BrandsManagementTest@1b266842</td></tr>
+<td>2</td>
+<td>tests.Dicountmanagement@5f0fd5a0</td></tr>
 <tr>
-<td title='tests.Dicountmanagement.validateNoSelection_ShowsError()'><b>validateNoSelection_ShowsError</b><br>Test class: tests.Dicountmanagement</td>
+<td title='tests.BrandsManagementTest.EdirActionButtonFlow()'><b>EdirActionButtonFlow</b><br>Test class: tests.BrandsManagementTest</td>
 <td></td>
-<td>0</td>
-<td>tests.Dicountmanagement@4f4c4b1a</td></tr>
+<td>10</td>
+<td>tests.BrandsManagementTest@42b3b079</td></tr>
+<tr>
+<td title='tests.OrderManagementTest.OpenOrderManagmentpage()'><b>OpenOrderManagmentpage</b><br>Test class: tests.OrderManagementTest</td>
+<td></td>
+<td>39</td>
+<td>tests.OrderManagementTest@651aed93</td></tr>
+<tr>
+<td title='tests.Dicountmanagement.verifyStatusDropdownSorting()'><b>verifyStatusDropdownSorting</b><br>Test class: tests.Dicountmanagement</td>
+<td></td>
+<td>41</td>
+<td>tests.Dicountmanagement@5f0fd5a0</td></tr>
 </table><p>
 </body>
 </html>

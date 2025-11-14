@@ -34,14 +34,18 @@ public class FollowersListPage {
 	 private By   sreachbar = By.id("searchUser");
 	 
 	 private By Searchicon = By.xpath("//i[@class=\"fa fa-search\"]");
-	 private By    resetBTN = By.xpath("//span[@class=\"mob-m-hide\"]");
-	 private  By     DeleteIcon = By.xpath("//span[@class=\"removeFollowerBySeller btn float-end\"]");
+	 private By resetBTN = By.xpath("//span[@class=\"mob-m-hide\"]");
+	 private By DeleteIcon = By.xpath("//i[contains(@class,'icon-delete')]");
+	 
+	 private By  DeletePOPButton =  By.xpath("//button[@class=\"btn red-btn text-light w-100\"]");
+	 
+
 
 	 
 	 
 	 public void OpenFollowersListPage(String Country, String state, String City, String keyword) throws InterruptedException {
 
-		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		   
 
 		    // Step 1️⃣ Scroll and click Followers List Page
 		    WebElement followersListPageBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(FollowersListPageBTN));
@@ -173,10 +177,57 @@ public class FollowersListPage {
 		    }
 
 		}
+	 public void DeleteValidation() {
+		    try {
+		        // Step 1️⃣ Click Reset Button
+		        WebElement resetButton = wait.until(ExpectedConditions.elementToBeClickable(resetBTN));
+		        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", resetButton);
+		        resetButton.click();
+		        Logger.log("🔄 Clicked Reset button successfully — returned to default view.");
+		    } catch (Exception e) {
+		        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(resetBTN));
+		        Logger.log("⚠️ Reset button clicked via JS — returned to default view.");
+		    }
 
+		    try {
+		        // Step 2️⃣ Click 2nd Delete icon
+		        List<WebElement> deleteIcons = driver.findElements(DeleteIcon);
+		        Logger.log("Total delete icons found before delete: " + deleteIcons.size());
 
+		        if (deleteIcons.size() >= 2) {
+		            WebElement secondDeleteIcon = deleteIcons.get(1);
+		            wait.until(ExpectedConditions.elementToBeClickable(secondDeleteIcon));
+		            secondDeleteIcon.click();
+		            Logger.log("✅ 2nd Delete icon clicked");
 
-	
+		            // Step 3️⃣ Click popup Delete confirmation button
+		            driver.findElement(DeletePOPButton).click();
+		            Logger.log("🗑️ Clicked Delete confirmation button");
+
+		            // Step 4️⃣ Wait briefly for DOM update (delete operation)
+		            Thread.sleep(2000); // optional small wait if page reloads or updates via JS
+
+		            // Step 5️⃣ Verify element removed
+		            List<WebElement> iconsAfterDelete = driver.findElements(DeleteIcon);
+		            Logger.log("Total delete icons after delete: " + iconsAfterDelete.size());
+
+		            if (iconsAfterDelete.size() >= 2) {
+		                Logger.log("❌ Delete failed — 2nd Delete icon still present");
+		                Assert.fail("2nd Delete icon still present — deletion not successful.");
+		            } else {
+		                Logger.log("✅ Delete successful — 2nd Delete icon removed.");
+		                Assert.assertTrue(true, "2nd Delete icon removed successfully.");
+		            }
+
+		        } else {
+		            Logger.log("❌ 2nd Delete icon not found before delete");
+		            Assert.fail("2nd Delete icon not found before attempting deletion.");
+		        }
+		    } catch (Exception e) {
+		        Logger.log("⚠️ Exception occurred while deleting 2nd icon: " + e.getMessage());
+		        Assert.fail("Exception during delete validation: " + e.getMessage());
+		    }
+		}
 
 		private void closePopups(int attempts) {
 	        for (int i = 0; i < attempts; i++) {

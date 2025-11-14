@@ -6,15 +6,6 @@
   </listeners>
   <test thread-count="5" name="Product Management Tests(failed)">
     <classes>
-      <class name="tests.AllProductsTests">
-        <methods>
-          <include name="setUp"/>
-          <include name="TestStatusFilter"/>
-          <include name="tearDown"/>
-          <include name="TestSortByFilter"/>
-          <include name="TestToggleByIndex"/>
-        </methods>
-      </class> <!-- tests.AllProductsTests -->
       <class name="tests.ActiveProductTest">
         <methods>
           <include name="setUp"/>
@@ -30,16 +21,23 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="OpenOrderManagmentpage"/>
           <include name="OrderPage"/>
         </methods>
       </class> <!-- tests.OrderManagementTest -->
-      <class name="tests.Dicountmanagement">
+      <class name="tests.FollowersListTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="OpenFollowerListpage"/>
+        </methods>
+      </class> <!-- tests.FollowersListTest -->
+      <class name="tests.Dicountmanagement">
+        <methods>
+          <include name="setUp"/>
           <include name="validateAddNewDiscount_PositiveFlow"/>
+          <include name="tearDown"/>
           <include name="setUpTest"/>
+          <include name="validateNoSelection_ShowsError"/>
         </methods>
       </class> <!-- tests.Dicountmanagement -->
     </classes>

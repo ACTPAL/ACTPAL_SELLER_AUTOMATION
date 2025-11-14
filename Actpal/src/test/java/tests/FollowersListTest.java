@@ -26,6 +26,7 @@ public class FollowersListTest   extends BaseTest {
 	        Assert.assertTrue(loginPage.getSuccessMessage().contains("Dashboard"), "❌ Login failed");
 	        FollowersListPage FollowerPage = new FollowersListPage(driver);
 	        FollowerPage.OpenFollowersListPage("India","Haryana","Bhiwani","Priya");
+	        FollowerPage.DeleteValidation();
 	        
 	        
 	}
