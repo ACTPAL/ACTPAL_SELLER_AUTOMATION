@@ -6,6 +6,14 @@
   </listeners>
   <test thread-count="5" name="Product Management Tests(failed)">
     <classes>
+      <class name="tests.AllProductsTests">
+        <methods>
+          <include name="setUp"/>
+          <include name="TestStatusFilter"/>
+          <include name="tearDown"/>
+          <include name="TestAllProductPageLoads"/>
+        </methods>
+      </class> <!-- tests.AllProductsTests -->
       <class name="tests.ActiveProductTest">
         <methods>
           <include name="setUp"/>
@@ -34,12 +42,18 @@
       <class name="tests.Dicountmanagement">
         <methods>
           <include name="setUp"/>
-          <include name="validateAddNewDiscount_PositiveFlow"/>
           <include name="tearDown"/>
+          <include name="validateAddNewDiscount_PositiveFlow"/>
           <include name="setUpTest"/>
-          <include name="validateNoSelection_ShowsError"/>
         </methods>
       </class> <!-- tests.Dicountmanagement -->
+      <class name="tests.TargetSettingTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="addnewTargetingFullFlow"/>
+        </methods>
+      </class> <!-- tests.TargetSettingTest -->
     </classes>
   </test> <!-- Discount Management Tests(failed) -->
 </suite> <!-- Failed suite [Actpal Suite] -->

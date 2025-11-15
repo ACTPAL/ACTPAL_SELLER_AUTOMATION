@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-14T10:37:54 IST" name="Default suite" finished-at="2025-11-14T10:39:14 IST" duration-ms="80283">
+  <suite started-at="2025-11-15T11:19:49 IST" name="Default suite" finished-at="2025-11-15T11:20:58 IST" duration-ms="68417">
     <groups>
     </groups>
-    <test started-at="2025-11-14T10:37:54 IST" name="Default test" finished-at="2025-11-14T10:39:14 IST" duration-ms="80283">
+    <test started-at="2025-11-15T11:19:49 IST" name="Default test" finished-at="2025-11-15T11:20:58 IST" duration-ms="68417">
       <class name="tests.TargetSettingTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-14T10:37:54 IST" name="setUp" finished-at="2025-11-14T10:37:58 IST" duration-ms="4216" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-15T11:19:49 IST" name="setUp" finished-at="2025-11-15T11:19:51 IST" duration-ms="1885" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="OpenTargetOpenPage()[pri:1, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-14T10:37:58 IST" name="OpenTargetOpenPage" finished-at="2025-11-14T10:38:17 IST" duration-ms="19210" status="PASS">
+        <test-method signature="OpenTargetOpenPage()[pri:1, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-15T11:19:51 IST" name="OpenTargetOpenPage" finished-at="2025-11-15T11:19:57 IST" duration-ms="6045" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenTargetOpenPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-14T10:38:18 IST" name="tearDown" finished-at="2025-11-14T10:38:18 IST" duration-ms="325" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-15T11:19:57 IST" name="tearDown" finished-at="2025-11-15T11:19:58 IST" duration-ms="429" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-14T10:38:18 IST" name="setUp" finished-at="2025-11-14T10:38:19 IST" duration-ms="1665" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-15T11:19:58 IST" name="setUp" finished-at="2025-11-15T11:19:59 IST" duration-ms="965" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addnewTargetingFullFlow()[pri:2, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-14T10:38:19 IST" name="addnewTargetingFullFlow" finished-at="2025-11-14T10:39:14 IST" duration-ms="54019" status="PASS">
+        <test-method signature="addnewTargetingFullFlow()[pri:2, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-15T11:19:59 IST" name="addnewTargetingFullFlow" finished-at="2025-11-15T11:20:57 IST" duration-ms="58748" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addnewTargetingFullFlow -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-14T10:39:14 IST" name="tearDown" finished-at="2025-11-14T10:39:14 IST" duration-ms="786" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TargetSettingTest@38425407]" started-at="2025-11-15T11:20:57 IST" name="tearDown" finished-at="2025-11-15T11:20:58 IST" duration-ms="298" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

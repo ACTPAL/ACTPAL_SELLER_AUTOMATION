@@ -15,55 +15,55 @@ import base.Logger;
 
 public class TargetSettingTest extends BaseTest {
 
-@ Test(priority=1)
-	public void OpenTargetOpenPage () {
-		LoginPage loginPage = new LoginPage(driver);
+    @Test(priority = 1)
+    public void OpenTargetOpenPage() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.enterEmail("jump2brand@gmail.com");
         loginPage.enterPassword("Test@123");
         loginPage.clickLogin();
         closePopups(1);
 
         Assert.assertTrue(loginPage.getSuccessMessage().contains("Dashboard"), "❌ Login failed");
-        TargetSettingPage  targetpage = new TargetSettingPage(driver);
-        
+        TargetSettingPage targetpage = new TargetSettingPage(driver, new WebDriverWait(driver, Duration.ofSeconds(15)));
+
         targetpage.OpenTargetSettingPage();
-        targetpage.searchFunctionality("rajeev1");
+        targetpage.searchFunctionality("raje");
         targetpage.ResetButtonFunctionality();
+    }
+
+    // Primary test that creates new targeting
+    @Test(priority = 2)
+    public void addnewTargetingFullFlow() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.enterEmail("jump2brand@gmail.com");
+        loginPage.enterPassword("Test@123");
+        loginPage.clickLogin();
+        closePopups(1);
+
+        Assert.assertTrue(loginPage.getSuccessMessage().contains("Dashboard"), "❌ Login failed");
+        TargetSettingPage targetpage = new TargetSettingPage(driver, new WebDriverWait(driver, Duration.ofSeconds(15)));
+
+        targetpage.OpenTargetSettingPage();
+
+        // Add random suffix to name so each run creates unique targeting
+        String randomName = "RajeevSingh" + (int) (Math.random() * 10000);
+
+        targetpage.CreateaNewTargetting(randomName,
+                "This is new Targeting",
+                "Products",
+                "F",
+                "ind",
+                "nep",
+                "Male",
+                "Married",
+                "Rajeev");
         
-        
-		
-	}
+        targetpage.deleteFirstRowTarget();
 
-@Test(priority=2)
-public void addnewTargetingFullFlow() throws InterruptedException {
-    LoginPage loginPage = new LoginPage(driver);
-    loginPage.enterEmail("jump2brand@gmail.com");
-    loginPage.enterPassword("Test@123");
-    loginPage.clickLogin();
-    closePopups(1);
+    }
 
-    Assert.assertTrue(loginPage.getSuccessMessage().contains("Dashboard"), "❌ Login failed");
-    TargetSettingPage targetpage = new TargetSettingPage(driver);
-
-    targetpage.OpenTargetSettingPage();
-
-    // ✅ Added random number here
-    String randomName = "RajeevSingh" + (int)(Math.random() * 10000);
-
-    // ✅ Create targeting and verify it
-    targetpage.CreateaNewTargetting(randomName, 
-                                   "This is new Targeting", 
-                                   "Products",
-                                   "F",
-                                   "ind",
-                                   "nep",
-                                   "Male",
-                                   "Married",
-                                   "Rajeev");
-}
-
-
-	private void closePopups(int attempts) {
+    // Keep same closePopups helper inside test class (kept as you had)
+    private void closePopups(int attempts) {
         for (int i = 0; i < attempts; i++) {
             try {
                 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
@@ -75,9 +75,5 @@ public void addnewTargetingFullFlow() throws InterruptedException {
             }
         }
     }
-
-	
-	
-	
-
 }
+
