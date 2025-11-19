@@ -421,7 +421,9 @@ public class TargetSettingPage {
             Assert.fail("❌ Delete operation failed for FIRST row");
         }
     }
-
+public void CheckMethod() {
+	System.out.println("Hello Rajeev Singh ");
+}
 
 
     // close popups helper (kept, but slightly optimized)
